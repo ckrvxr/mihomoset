@@ -1,0 +1,153 @@
+name: Update Rules
+
+on:
+  schedule:
+    - cron: "10 22 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Mihomo
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        case "$(uname -m)" in
+          'x86_64')             ARCH='amd64'  ;;
+          'x86'|'i686'|'i386')  ARCH='386'    ;;
+          'aarch64'|'arm64')    ARCH='arm64'  ;;
+          'armv7l')             ARCH='armv7'  ;;
+          'riscv64')            ARCH='riscv64';;
+          's390x')              ARCH='s390x'  ;;
+          *)                    ARCH='unknown';;
+        esac
+        echo "Detected architecture: $ARCH"
+    
+        if [ "$ARCH" != 'unknown' ]; then
+          MIHOMO_VER=$(wget -qO- 'https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt')
+          MIHOMO_URL="https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-${ARCH}-${MIHOMO_VER}.deb"
+          wget -qO mihomo.deb "$MIHOMO_URL"
+          sudo apt-get install ./mihomo.deb
+        else
+          echo "Fail due to unsupported mihomo architecture"
+          exit 1
+        fi
+
+    - name: Download domains file for anti-AD
+      run: curl -o domains https://anti-ad.net/domains.txt
+
+    - name: Convert domains to Mihomo rules yaml for anti-AD
+      run: |
+        python3 - <<EOF
+        import re
+        def convert_domains_to_yaml(domains_file, output_file):
+            with open(domains_file, 'r') as f:
+                lines = f.readlines()
+
+            rules = set()
+            for line in lines:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                # Remove comments from the line
+                line = re.sub(r'\s*#.*', '', line)
+                if line:
+                    rules.add(f"DOMAIN-SUFFIX,{line}")
+
+            with open(output_file, 'w') as f:
+                f.write("payload:\n")
+                f.writelines(f"  - {rule}\n" for rule in sorted(rules))
+                f.write("\n")
+        convert_domains_to_yaml('domains', 'anti-AD.yaml')
+        EOF
+
+    - name: Compile to Mihomo rules binary for anti-AD
+      run: |
+        if [ "$(which mihomo 2>/dev/null)"x = 'x' ]; then
+          echo 'mihomo not available.'
+          exit 1
+        else
+          echo 'Compiling mihomo ruleset for anti-AD...'
+          mihomo convert-ruleset domain yaml ./anti-AD.yaml ./anti-AD.mrs
+        fi
+
+    - name: Download hosts file for StevenBlack
+      run: curl -o hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+
+    - name: Convert hosts to Mihomo rules yaml for StevenBlack
+      run: |
+        python3 - <<EOF
+        import re
+        def convert_hosts_to_yaml(hosts_file, output_file):
+            with open(hosts_file, 'r') as f:
+                lines = f.readlines()
+
+            filter_entries = {
+                ('127.0.0.1', 'localhost'),
+                ('127.0.0.1', 'localhost.localdomain'),
+                ('127.0.0.1', 'local'),
+                ('255.255.255.255', 'broadcasthost'),
+                ('::1', 'localhost'),
+                ('::1', 'ip6-localhost'),
+                ('::1', 'ip6-loopback'),
+                ('fe80::1%lo0', 'localhost'),
+                ('ff00::0', 'ip6-localnet'),
+                ('ff00::0', 'ip6-mcastprefix'),
+                ('ff02::1', 'ip6-allnodes'),
+                ('ff02::2', 'ip6-allrouters'),
+                ('ff02::3', 'ip6-allhosts'),
+                ('0.0.0.0', '0.0.0.0')
+            }
+
+            rules = set()
+            for line in lines:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                line = re.sub(r'\s*#.*', '', line)
+                match = re.match(r'^(\d{1,3}(?:\.\d{1,3}){3}|[a-fA-F0-9:]+)\s+(.+)$', line)
+                if match:
+                    ip, domain = match.groups()
+                    if (ip, domain) not in filter_entries:
+                        rules.add(f"DOMAIN-SUFFIX,{domain}")
+
+            with open(output_file, 'w') as f:
+                f.write("payload:\n")
+                f.writelines(f"  - {rule}\n" for rule in sorted(rules))
+                f.write("\n")
+        convert_hosts_to_yaml('hosts', 'StevenBlack.yaml')
+        EOF
+
+    - name: Compile to Mihomo rules binary for StevenBlack
+      run: |
+        if [ "$(which mihomo 2>/dev/null)"x = 'x' ]; then
+          echo 'mihomo not available.'
+          exit 1
+        else
+          echo 'Compiling mihomo ruleset for StevenBlack...'
+          mihomo convert-ruleset domain yaml ./StevenBlack.yaml ./StevenBlack.mrs
+        fi
+        
+    - name: Clean up unnecessary files
+      run: |
+        rm -rf .git/*
+        git init
+        git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+        git checkout -b release
+
+    - name: Add and commit changes
+      run: |
+        current_date=$(date +'%Y-%m-%d')
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add anti-AD.yaml anti-AD.mrs StevenBlack.yaml StevenBlack.mrs
+        git commit -m "Update rules ($current_date)"
+
+    - name: Force push to releases branch
+      run: |
+        git push origin release -f
