@@ -51,7 +51,7 @@ jobs:
       run: python3 Source/Script/hosts2yaml.py StevenBlack.hosts StevenBlack.yaml
 
     - name: Compile to Mihomo rules binary for StevenBlack
-      run: mihomo convert-ruleset domain StevenBlack.yaml ./StevenBlack.yaml ./StevenBlack.mrs
+      run: mihomo convert-ruleset domain yaml ./StevenBlack.yaml ./StevenBlack.mrs
 
     - name: Push to releases branch
       run: |
