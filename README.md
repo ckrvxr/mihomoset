@@ -13,7 +13,7 @@ rule-providers:
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/ckrvxr/hosts4mihomo@release/StevenBlack.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/ckrvxr/mihomoset@release/StevenBlack.mrs"
 
 ```
 
@@ -24,8 +24,8 @@ rules:
 
 ### CDN Links:
 
-* StevenBlack:  https://testingcf.jsdelivr.net/gh/ckrvxr/hosts4mihomo@release/StevenBlack.mrs
-* anti-AD :  https://testingcf.jsdelivr.net/gh/ckrvxr/hosts4mihomo@release/anti-AD.mrs
+* StevenBlack:  https://testingcf.jsdelivr.net/gh/ckrvxr/mihomoset@release/StevenBlack.mrs
+* anti-AD :  https://testingcf.jsdelivr.net/gh/ckrvxr/mihomoset@release/anti-AD.mrs
 
 ### Subconverter rules
-https://api.sublink.dev/sub?config=https://raw.githubusercontent.com/ckrvxr/hosts4mihomo/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=yoururl
+https://api.sublink.dev/sub?config=https://raw.githubusercontent.com/ckrvxr/mihomoset/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=yoururl
