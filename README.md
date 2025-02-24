@@ -1,4 +1,4 @@
-# hosts4mihomo
+# mihomoset
 
 This project retrieves the hosts file from the source at 6 AM in Beijing time every day to convert to the binary rule file for mihomo (mrs,yaml).
 
