@@ -39,3 +39,4 @@ https://api.sublink.dev/sub?config=https://github.com/ckrvxr/mihomoset/raw/refs/
 - https://github.com/privacy-protection-tools/anti-AD
 - https://github.com/StevenBlack/hosts
 - https://github.com/tindy2013/subconverter
+- https://github.com/zsokami/ACL4SSR
