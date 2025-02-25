@@ -1,6 +1,6 @@
 # mihomoset
 
-This project retrieves the hosts file from the source at 6 AM in Beijing time every day to convert to the binary rule file for mihomo (mrs,yaml).
+This project retrieves the hosts file from the source at 6 AM in Beijing time every day to convert to the binary rule file for mihomo (mrs, yaml).
 
 ### Example:
 
@@ -28,4 +28,4 @@ rules:
 * anti-AD :  https://testingcf.jsdelivr.net/gh/ckrvxr/mihomoset@release/anti-AD.mrs
 
 ### Subconverter rules
-https://api.sublink.dev/sub?config=https://raw.githubusercontent.com/ckrvxr/mihomoset/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=yoururl
+https://api.sublink.dev/sub?config=https://raw.githubusercontent.com/ckrvxr/mihomoset/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=YOURURL
