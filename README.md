@@ -1,4 +1,4 @@
-# mihomoset
+# Mihomo Rules
 
 This project retrieves the hosts file from the source at 6 AM in Beijing time every day to convert to the binary rule file for mihomo (mrs, yaml).
 
@@ -13,7 +13,7 @@ rule-providers:
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/ckrvxr/mihomoset@release/StevenBlack.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/ckrvxr/Mihomo-Rules@release/StevenBlack.mrs"
 
 ```
 
@@ -24,13 +24,13 @@ rules:
 
 ### CDN Links:
 
-* StevenBlack:  https://testingcf.jsdelivr.net/gh/ckrvxr/mihomoset@release/StevenBlack.mrs
-* anti-AD :  https://testingcf.jsdelivr.net/gh/ckrvxr/mihomoset@release/anti-AD.mrs
+* StevenBlack:  https://testingcf.jsdelivr.net/gh/ckrvxr/Mihomo-Rules@release/StevenBlack.mrs
+* anti-AD :  https://testingcf.jsdelivr.net/gh/ckrvxr/Mihomo-Rules@release/anti-AD.mrs
 
 ### Subconverter rules
 
 ```
-https://api.sublink.dev/sub?config=https://github.com/ckrvxr/mihomoset/raw/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=YOURURL
+https://api.sublink.dev/sub?config=https://github.com/ckrvxr/Mihomo-Rules/raw/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=YOURURL
 
 ```
 ### Special Thanks To
