@@ -38,3 +38,4 @@ https://api.sublink.dev/sub?config=https://raw.githubusercontent.com/ckrvxr/miho
 - https://github.com/MetaCubeX/mihomo
 - https://github.com/privacy-protection-tools/anti-AD
 - https://github.com/StevenBlack/hosts
+- https://github.com/tindy2013/subconverter
