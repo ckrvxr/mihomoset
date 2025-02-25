@@ -30,7 +30,7 @@ rules:
 ### Subconverter rules
 
 ```
-https://api.sublink.dev/sub?config=https://raw.githubusercontent.com/ckrvxr/mihomoset/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=YOURURL
+https://api.sublink.dev/sub?config=https://github.com/ckrvxr/mihomoset/raw/refs/heads/main/subconverter-rules.ini&target=clash&udp=true&url=YOURURL
 
 ```
 ### Special Thanks To
