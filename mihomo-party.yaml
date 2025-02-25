@@ -10,10 +10,11 @@ dns!:
   listen: '127.0.0.1:53'
   cache-algorithm: arc
   ipv6: true
+  prefer-h3: true
   default-nameserver:
     - '223.6.6.6'
   nameserver:
-    - tls://dns.alidns.com
+    - https://dns.alidns.com/dns-query
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: '198.18.0.1/16'
