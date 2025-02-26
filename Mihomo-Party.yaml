@@ -5,6 +5,12 @@ secret: 'MihomoParty'
 
 ipv6: true
 
+# https://wiki.metacubex.one/config/dns/diagram/
+# According to the mihomo kernel documentation on DNS resolution processes,
+# proxy domains are resolved by remote hosts. When Chinese DNS service
+# providers make errors, the fallback DNS is also likely to be incorrect. 
+# Therefore, the chance of hitting the fallback is almost zero, so there 
+# is no need to configure fallback here.
 dns!:
   enable: true
   listen: '127.0.0.1:53'
@@ -59,6 +65,9 @@ sniffer!:
       ports: [443, 8443]
     QUIC:
       ports: [443, 8443]
+  skip-domain:
+    - "Mijia Cloud"
+    - "+.push.apple.com"
 
 profile:
   store-selected: true
