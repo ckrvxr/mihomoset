@@ -1,2 +1,7 @@
 payload:
+  # 国家反诈中心
   - PROCESS-NAME,com.hicorenational.antifraud
+  # MIUI 应用包管理组件
+  - PROCESS-NAME,com.miui.packageinstaller
+  # MIUI 系统安全组件
+  - PROCESS-NAME,com.miui.guardprovider
