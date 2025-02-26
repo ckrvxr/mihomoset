@@ -1,5 +1,6 @@
 payload:
   - PROCESS-NAME,com.hicorenational.antifraud
+  - PROCESS-NAME,cn.xuexi.android
   - PROCESS-NAME,com.miui.packageinstaller
   - PROCESS-NAME,com.miui.guardprovider
   - PROCESS-NAME,com.tencent.qqpimsecure
