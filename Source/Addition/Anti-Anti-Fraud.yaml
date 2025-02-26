@@ -1,19 +1,10 @@
 payload:
-  # 国家反诈中心
-  - PROCESS-NAME,com.hicorenational.antifraud
-  # MIUI 应用包管理组件
-  - PROCESS-NAME,com.miui.packageinstaller
-  # MIUI 系统安全组件
-  - PROCESS-NAME,com.miui.guardprovider
-  # 腾讯手机管家
-  - PROCESS-NAME,com.tencent.qqpimsecure
-  # QQ 安全中心
-  - PROCESS-NAME,com.tencent.token
-  # 360 手机卫士
-  - PROCESS-NAME,com.qihoo360.mobilesafe
-  # 360 清理大师
-  - PROCESS-NAME,com.qihoo.cleandroid_cn
-  # 360 清理大师极速版
-  - PROCESS-NAME,com.qihoo.cleandroid_lite
-  # 猎豹清理大师
-  - PROCESS-NAME,com.cleanmaster.mguard_cn
+  - PROCESS-NAME,com.hicorenational.antifraud # 国家反诈中心
+  - PROCESS-NAME,com.miui.packageinstaller # MIUI 应用包管理组件
+  - PROCESS-NAME,com.miui.guardprovider # MIUI 系统安全组件
+  - PROCESS-NAME,com.tencent.qqpimsecure # 腾讯手机管家
+  - PROCESS-NAME,com.tencent.token # QQ 安全中心
+  - PROCESS-NAME,com.qihoo360.mobilesafe # 360 手机卫士
+  - PROCESS-NAME,com.qihoo.cleandroid_cn  # 360 清理大师
+  - PROCESS-NAME,com.qihoo.cleandroid_lite # 360 清理大师极速版
+  - PROCESS-NAME,com.cleanmaster.mguard_cn  # 猎豹清理大师
