@@ -53,15 +53,6 @@ jobs:
     - name: Compile to Mihomo rules binary for anti-AD-EDNS
       run: mihomo convert-ruleset domain yaml ./anti-AD-EDNS.yaml ./anti-AD-EDNS.mrs
     
-    - name: Download domains file for anti-AD-ANV
-      run: curl -o anti-AD-ANV.domains https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/refs/heads/master/discretion/anv.txt
-
-    - name: Convert hosts to Mihomo rules yaml for anti-AD-ANV
-      run: python3 Source/Script/domains2yaml.py anti-AD-ANV.domains anti-AD-ANV.yaml     
-
-    - name: Compile to Mihomo rules binary for anti-AD-ANV
-      run: mihomo convert-ruleset domain yaml ./anti-AD-ANV.yaml ./anti-AD-ANV.mrs    
-    
     - name: Download hosts file for StevenBlack
       run: curl -o StevenBlack.hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 
