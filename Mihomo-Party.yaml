@@ -91,7 +91,7 @@ rule-providers:
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/ckrvxr/Mihomo-Rules@release/StevenBlack.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/StevenBlack.mrs"
 
 geodata-mode: true
 geodata-loader: standard
