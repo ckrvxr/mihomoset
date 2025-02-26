@@ -30,7 +30,7 @@ rules:
 ### Subconverter rules
 
 ```
-https://url.v1.mk/sub?config=https://github.com/Ckrvxr/Mihomo-Rules/raw/refs/heads/main/subconverter.ini&target=clash&udp=true&url=YOURURL
+https://url.v1.mk/sub?config=https://github.com/Ckrvxr/Mihomo-Rules/raw/refs/heads/main/Subconverter.ini&target=clash&udp=true&url=YOURURL
 
 ```
 ### Special Thanks To
