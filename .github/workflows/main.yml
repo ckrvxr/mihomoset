@@ -75,11 +75,12 @@ jobs:
       run: |
         current_date=$(date +'%Y-%m-%d')
         rm -rf .git/*
+        rm Mihomo-Party.yaml
         git init
         git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
         git checkout -b release
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
-        git add *.yaml *.mrs !Mihomo-Party.yaml
+        git add *.yaml *.mrs
         git commit -m "Update rules ($current_date)"
         git push origin release -f
