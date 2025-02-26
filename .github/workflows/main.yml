@@ -80,10 +80,6 @@ jobs:
         git checkout -b release
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
-        git add \ 
-          anti-AD.yaml anti-AD.mrs \
-          StevenBlack.yaml StevenBlack.mrs \
-          Fuck-You-MIUI-Fhosts.yaml Fuck-You-MIUI-Fhosts.mrs \
-          Fuck-You-MIUI-MIhosts.yaml Fuck-You-MIUI-MIhosts.mrs
+        git add *.yaml *.mrs
         git commit -m "Update rules ($current_date)"
         git push origin release -f
