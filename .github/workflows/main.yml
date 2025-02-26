@@ -63,7 +63,7 @@ jobs:
       run: python3 Source/Script/hosts2yaml.py Fuck-You-MIUI-Fhosts.hosts Fuck-You-MIUI-Fhosts.yaml
 
     - name: Convert hosts to Mihomo rules yaml for Fuck-You-MIUI-MIhosts
-      run: python3 Source/Script/hosts2yaml.py Fuck-You-MIUI-Fhosts.hosts Fuck-You-MIUI-MIhosts.yaml     
+      run: python3 Source/Script/hosts2yaml.py Fuck-You-MIUI-MIhosts.yaml Fuck-You-MIUI-MIhosts.yaml     
  
     - name: Compile to Mihomo rules binary for Fuck-You-MIUI-Fhosts
       run: mihomo convert-ruleset domain yaml ./Fuck-You-MIUI-Fhosts.yaml ./Fuck-You-MIUI-Fhosts.mrs
