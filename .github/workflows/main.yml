@@ -55,18 +55,18 @@ jobs:
 
     - name: Download hosts file for Fuck-You-MIUI-Fhosts
       run: curl -o Fuck-You-MIUI-Fhosts.hosts https://raw.githubusercontent.com/LoopDns/Fuck-you-MIUI/refs/heads/main/Fhosts
-
+    
+    - name: Convert hosts to Mihomo rules yaml for Fuck-You-MIUI-Fhosts
+      run: python3 Source/Script/hosts2yaml.py Fuck-You-MIUI-Fhosts.hosts Fuck-You-MIUI-Fhosts.yaml
+    
+    - name: Compile to Mihomo rules binary for Fuck-You-MIUI-Fhosts
+      run: mihomo convert-ruleset domain yaml ./Fuck-You-MIUI-Fhosts.yaml ./Fuck-You-MIUI-Fhosts.mrs
+    
     - name: Download hosts file for Fuck-You-MIUI-MIhosts
       run: curl -o Fuck-You-MIUI-MIhosts.hosts https://raw.githubusercontent.com/LoopDns/Fuck-you-MIUI/refs/heads/main/MIhosts
 
-    - name: Convert hosts to Mihomo rules yaml for Fuck-You-MIUI-Fhosts
-      run: python3 Source/Script/hosts2yaml.py Fuck-You-MIUI-Fhosts.hosts Fuck-You-MIUI-Fhosts.yaml
-
     - name: Convert hosts to Mihomo rules yaml for Fuck-You-MIUI-MIhosts
       run: python3 Source/Script/hosts2yaml.py Fuck-You-MIUI-Fhosts.hosts Fuck-You-MIUI-MIhosts.yaml     
- 
-    - name: Compile to Mihomo rules binary for Fuck-You-MIUI-Fhosts
-      run: mihomo convert-ruleset domain yaml ./Fuck-You-MIUI-Fhosts.yaml ./Fuck-You-MIUI-Fhosts.mrs
 
     - name: Compile to Mihomo rules binary for Fuck-You-MIUI-MIhosts
       run: mihomo convert-ruleset domain yaml ./Fuck-You-MIUI-MIhosts.yaml ./Fuck-You-MIUI-MIhosts.mrs
