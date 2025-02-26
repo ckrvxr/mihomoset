@@ -43,7 +43,16 @@ jobs:
 
     - name: Compile to Mihomo rules binary for anti-AD
       run: mihomo convert-ruleset domain yaml ./anti-AD.yaml ./anti-AD.mrs
+    
+    - name: Download domains file for anti-AD-EDNS
+      run: curl -o anti-AD-EDNS.domains https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/refs/heads/master/discretion/dns.txt
 
+    - name: Convert hosts to Mihomo rules yaml for anti-AD-EDNS
+      run: python3 Source/Script/domains2yaml.py anti-AD-EDNS.hosts anti-AD-EDNS.yaml     
+
+    - name: Compile to Mihomo rules binary for anti-AD-EDNS
+      run: mihomo convert-ruleset domain yaml ./anti-AD-EDNS.yaml ./anti-AD-EDNS.mrs
+    
     - name: Download hosts file for StevenBlack
       run: curl -o StevenBlack.hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 
@@ -70,7 +79,7 @@ jobs:
 
     - name: Compile to Mihomo rules binary for Fuck-You-MIUI-MIhosts
       run: mihomo convert-ruleset domain yaml ./Fuck-You-MIUI-MIhosts.yaml ./Fuck-You-MIUI-MIhosts.mrs
-
+    
     - name: Push to releases branch
       run: |
         current_date=$(date +'%Y-%m-%d')
