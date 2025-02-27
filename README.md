@@ -14,7 +14,6 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/StevenBlack.mrs"
-
 ```
 
 ```yaml
@@ -27,12 +26,16 @@ rules:
 * StevenBlack:  https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/StevenBlack.mrs
 * anti-AD :  https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/anti-AD.mrs
 
-### Subconverter rules
+### Mihomo Party Override Rules
+
+[Mihomo-Party.yaml](https://github.com/Ckrvxr/Mihomo-Rules/main/Source/Override/Mihomo-Party.yaml)
+
+### Subconverter Override Rules
 
 ```
 https://url.v1.mk/sub?config=https://github.com/Ckrvxr/Mihomo-Rules/raw/refs/heads/main/Source/Override/Subconverter.ini&target=clash&udp=true&url=YOURURL
-
 ```
+
 ### Special Thanks To
 
 - https://github.com/MetaCubeX/mihomo
