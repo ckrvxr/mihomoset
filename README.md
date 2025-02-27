@@ -28,7 +28,7 @@ rules:
 
 ### Mihomo Party Override Rules
 
-[Mihomo-Party.yaml](https://github.com/Ckrvxr/Mihomo-Rules/main/Source/Override/Mihomo-Party.yaml)
+[Mihomo-Party.yaml](https://github.com/Ckrvxr/Mihomo-Rules/blob/main/Source/Override/Mihomo-Party.yaml)
 
 ### Subconverter Override Rules
 
