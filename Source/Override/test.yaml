@@ -26,9 +26,6 @@ custom:
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
 
   rulesets:
-    enabled: true
-    overwrite_original_rules: true
-    rulesets:
     - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/main/Source/Addition/Anti-Anti-Fraud.yaml"
       group: REJECT
       interval: 86400
