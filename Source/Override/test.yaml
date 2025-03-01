@@ -26,19 +26,19 @@ custom:
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
 
   rulesets:
-    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/main/Source/Addition/Anti-Anti-Fraud.yaml"
+    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/main/Source/Addition/Anti-Anti-Fraud.yaml"
       group: REJECT
       interval: 86400
-    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-Fhosts.yaml"
+    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-Fhosts.yaml"
       group: 'AD & Privacy'
       interval: 86400
-    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-MIhosts.yaml"
+    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-MIhosts.yaml"
       group: 'AD & Privacy'
       interval: 86400
-    - rule: "clash-domain:https://anti-ad.net/clash.yaml"
+    - ruleset: "clash-domain:https://anti-ad.net/clash.yaml"
       group: 'AD & Privacy'
       interval: 86400
-    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/anti-AD-EDNS.yaml"
+    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/anti-AD-EDNS.yaml"
       group: EDNS
       interval: 86400
     - rule: "[]GEOSITE,apple"
