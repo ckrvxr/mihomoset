@@ -38,6 +38,8 @@ custom:
     - ruleset: "clash-domain:https://anti-ad.net/clash.yaml"
       group: 'AD & Privacy'
       interval: 86400
+    - rule: "GEOSITE,category-ads-all"
+      group: 'AD & Privacy'
     - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/anti-AD-EDNS.yaml"
       group: EDNS
       interval: 86400
