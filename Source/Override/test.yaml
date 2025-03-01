@@ -41,23 +41,23 @@ custom:
     - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/anti-AD-EDNS.yaml"
       group: EDNS
       interval: 86400
-    - rule: "[]GEOSITE,apple"
+    - rule: "GEOSITE,apple"
       group: Apple
-    - rule: "[]GEOSITE,microsoft"
+    - rule: "GEOSITE,microsoft"
       group: Microsoft
-    - rule: "[]GEOSITE,google"
+    - rule: "GEOSITE,google"
       group: Google
-    - rule: "[]GEOSITE,category-games@cn"
+    - rule: "GEOSITE,category-games@cn"
       group: DIRECT
-    - rule: "[]GEOSITE,private"
+    - rule: "GEOSITE,private"
       group: DIRECT
-    - rule: "[]GEOIP,private,no-resolve"
+    - rule: "GEOIP,private,no-resolve"
       group: DIRECT
-    - rule: "[]GEOSITE,CN"
+    - rule: "GEOSITE,CN"
       group: DIRECT
-    - rule: "[]GEOIP,CN,no-resolve"
+    - rule: "GEOIP,CN,no-resolve"
       group: DIRECT
-    - rule: "[]MATCH"
+    - rule: "MATCH"
       group: FINAL
 
   add_emoji: true
