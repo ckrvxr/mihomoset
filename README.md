@@ -33,7 +33,7 @@ rules:
 ### Subconverter Override Rules
 
 ```
-https://url.v1.mk/sub?config=https://github.com/Ckrvxr/Mihomo-Rules/raw/refs/heads/main/Source/Override/Subconverter.ini&target=clash&udp=true&url=YOURURL
+https://url.v1.mk/sub?config=https://github.com/Ckrvxr/Mihomo-Rules/raw/refs/heads/main/Source/Override/Subconverter.ini&clash.doh=true&target=clash&udp=true&url=YOURURL
 ```
 
 ### Special Thanks To
