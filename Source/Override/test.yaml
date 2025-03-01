@@ -1,6 +1,17 @@
 custom:
   exclude_remarks:
     - "(Official|官网|官網|Data Left|Remain|剩余|剩餘|Traffic|流量|Expire|Expiry|到期|过期|過期|效期|Time|时间|時間|Reset|重置|分割线|(\\d[\\d.]*\\s*[MG]B[^\\dA-Za-z]+|[:：]\\s*)\\d[\\d.]*\\s*GB(?!\\dA-Za-z))"
+  
+  clash_rule_base: 
+      dns:
+        enable: true
+        ipv6: true
+        enhanced-mode: fake-ip
+        nameserver:
+         - 119.29.29.29
+         - 114.114.114.114
+         - 223.5.5.5
+
 
   custom_proxy_group:
     - name: 'SELECT'
