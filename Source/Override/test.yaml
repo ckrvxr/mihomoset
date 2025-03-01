@@ -6,31 +6,24 @@ custom:
     - name: 'SELECT'
       type: select
       rule: [".*"]
-      test_url: http://www.gstatic.com/generate_204
     - name: 'AD & Privacy'
       type: select
       rule: ["[]REJECT", "[]PASS"]
-      test_url: http://www.gstatic.com/generate_204
     - name: 'EDNS'
       type: select
-      rule: ["[]PASS", "[]REJECT"]
-      test_url: http://www.gstatic.com/generate_204
+      rule: ["[]REJECT", "[]PASS"]
     - name: 'Apple'
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-      test_url: 'http://captive.apple.com'
     - name: 'Microsoft'
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-      test_url: 'http://www.msftconnecttest.com/connecttest.txt'
     - name: 'Google'
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-      test_url: 'http://www.gstatic.com/generate_204'
     - name: 'FINAL'
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-      test_url: 'http://www.gstatic.com/generate_204'
 
   rulesets:
     - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/main/Source/Addition/Anti-Anti-Fraud.yaml"
