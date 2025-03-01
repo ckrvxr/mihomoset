@@ -29,39 +29,39 @@ custom:
     enabled: true
     overwrite_original_rules: true
     rulesets:
-      - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/main/Source/Addition/Anti-Anti-Fraud.yaml"
-        group: REJECT
-        interval: 86400
-      - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-Fhosts.yaml"
-        group: 'AD & Privacy'
-        interval: 86400
-      - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-MIhosts.yaml"
-        group: 'AD & Privacy'
-        interval: 86400
-      - rule: "clash-domain:https://anti-ad.net/clash.yaml"
-        group: 'AD & Privacy'
-        interval: 86400
-      - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/anti-AD-EDNS.yaml"
-        group: EDNS
-        interval: 86400
-      - rule: "[]GEOSITE,apple"
-        group: Apple
-      - rule: "[]GEOSITE,microsoft"
-        group: Microsoft
-      - rule: "[]GEOSITE,google"
-        group: Google
-      - rule: "[]GEOSITE,category-games@cn"
-        group: DIRECT
-      - rule: "[]GEOSITE,private"
-        group: DIRECT
-      - rule: "[]GEOIP,private,no-resolve"
-        group: DIRECT
-      - rule: "[]GEOSITE,CN"
-        group: DIRECT
-      - rule: "[]GEOIP,CN,no-resolve"
-        group: DIRECT
-      - rule: "[]MATCH"
-        group: FINAL
+    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/main/Source/Addition/Anti-Anti-Fraud.yaml"
+      group: REJECT
+      interval: 86400
+    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-Fhosts.yaml"
+      group: 'AD & Privacy'
+      interval: 86400
+    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/Fuck-You-MIUI-MIhosts.yaml"
+      group: 'AD & Privacy'
+      interval: 86400
+    - rule: "clash-domain:https://anti-ad.net/clash.yaml"
+      group: 'AD & Privacy'
+      interval: 86400
+    - rule: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/Mihomo-Rules/refs/heads/release/anti-AD-EDNS.yaml"
+      group: EDNS
+      interval: 86400
+    - rule: "[]GEOSITE,apple"
+      group: Apple
+    - rule: "[]GEOSITE,microsoft"
+      group: Microsoft
+    - rule: "[]GEOSITE,google"
+      group: Google
+    - rule: "[]GEOSITE,category-games@cn"
+      group: DIRECT
+    - rule: "[]GEOSITE,private"
+      group: DIRECT
+    - rule: "[]GEOIP,private,no-resolve"
+      group: DIRECT
+    - rule: "[]GEOSITE,CN"
+      group: DIRECT
+    - rule: "[]GEOIP,CN,no-resolve"
+      group: DIRECT
+    - rule: "[]MATCH"
+      group: FINAL
 
   emojis:
     add_emoji: true
