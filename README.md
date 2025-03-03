@@ -1,6 +1,6 @@
 # Mihomo Rules
-
-This project retrieves the hosts file from the source at 6 AM in Beijing time every day to convert to the binary rule file for mihomo (mrs, yaml).
+Override Rules for Mihomo, With Anti-Anti-Fraud.
+This project also retrieves the hosts file from the source at 6 AM in Beijing time every day to convert to the binary rule file for mihomo (mrs, yaml).
 
 ### Example:
 
