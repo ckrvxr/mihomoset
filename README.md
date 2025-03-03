@@ -1,6 +1,4 @@
-# Mihomo Rules
-
-## Override Rules
+# Override Rules
 
 Override Rules for Mihomo, With Anti-Anti-Fraud.
 
@@ -13,7 +11,7 @@ Override Rules for Mihomo, With Anti-Anti-Fraud.
 ```
 https://api.sublink.dev/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/refs/heads/main/Source/Override/Subconverter.yaml&target=clash&udp=true&url=YOURURL
 ```
-## Generated Rules
+# Generated Rules
 
 This project also retrieves the hosts file from the source at 6 AM in Beijing time every day to convert to the binary rule file for mihomo (mrs, yaml).
 
