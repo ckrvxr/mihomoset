@@ -4,6 +4,9 @@ mixed-port: 7890
 external-controller: 127.0.0.1:9090
 secret: 'SubconverterMihomo'
 
+mode: rule
+find-process-mode: strict
+
 ipv6: true
 
 profile:
