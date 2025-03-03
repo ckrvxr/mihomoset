@@ -35,7 +35,7 @@ rules:
 ### Subconverter Override Rules (Only Mihomo)
 
 ```
-https://url.v1.mk/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/refs/heads/main/Source/Override/Subconverter.yaml&target=clash&udp=true&url=YOURURL
+https://api.sublink.dev/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/refs/heads/main/Source/Override/Subconverter.yaml&target=clash&udp=true&url=YOURURL
 ```
 
 ### Special Thanks To
