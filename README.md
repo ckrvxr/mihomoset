@@ -1,7 +1,5 @@
 # Override Rules
 
-Override Rules for Mihomo, With Anti-Anti-Fraud.
-
 ### Mihomo Party Override Rules
 
 [MihomoParty.yaml](https://github.com/Ckrvxr/MihomoRules/blob/main/Source/Override/MihomoParty.yaml)
