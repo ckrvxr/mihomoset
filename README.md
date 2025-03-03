@@ -13,7 +13,7 @@ rule-providers:
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/StevenBlack.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
 ```
 
 ```yaml
@@ -23,17 +23,17 @@ rules:
 
 ### CDN Links:
 
-* StevenBlack:  https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/StevenBlack.mrs
-* anti-AD :  https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/anti-AD.mrs
+* StevenBlack:  https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs
+* anti-AD :  https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD.mrs
 
 ### Mihomo Party Override Rules
 
-[Mihomo-Party.yaml](https://github.com/Ckrvxr/Mihomo-Rules/blob/main/Source/Override/Mihomo-Party.yaml)
+[Mihomo-Party.yaml](https://github.com/Ckrvxr/MihomoRules/blob/main/Source/Override/Mihomo-Party.yaml)
 
-### Subconverter Override Rules
+### Subconverter Override Rules (Only Mihomo)
 
 ```
-https://url.v1.mk/sub?config=https://github.com/Ckrvxr/Mihomo-Rules/raw/refs/heads/main/Source/Override/Subconverter.yaml&clash.doh=true&target=clash&udp=true&url=YOURURL
+https://url.v1.mk/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/refs/heads/main/Source/Override/Subconverter.yaml&target=clash&udp=true&url=YOURURL
 ```
 
 ### Special Thanks To
