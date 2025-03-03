@@ -1,5 +1,6 @@
 log-level: warning
 
+mixed-port: 7890
 external-controller: '127.0.0.1:9090'
 secret: 'MihomoParty'
 
@@ -100,7 +101,7 @@ rule-providers:
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/Mihomo-Rules@release/StevenBlack.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
 
 geodata-mode: true
 geodata-loader: standard
