@@ -39,7 +39,7 @@ rules:
 * StevenBlack:  https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs
 * anti-AD :  https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD.mrs
 
-### Special Thanks To
+# Special Thanks To
 
 - https://github.com/MetaCubeX/mihomo
 - https://github.com/privacy-protection-tools/anti-AD
