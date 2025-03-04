@@ -55,6 +55,7 @@ custom:
       group: Apple
     - rule: "GEOSITE,microsoft"
       group: Microsoft
+    # https://www.yetpage.com/archives/278
     - rule: "GEOSITE,google"
       group: Google
     - rule: "GEOSITE,category-games@cn"
