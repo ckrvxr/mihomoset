@@ -79,7 +79,7 @@ jobs:
 
     - name: Compile to Mihomo rules binary for Fuck-You-MIUI-MIhosts
       run: mihomo convert-ruleset domain yaml Fuck-You-MIUI-MIhosts.yaml Fuck-You-MIUI-MIhosts.mrs
-    
+
     - name: Push to releases branch
       run: |
         current_date=$(date +'%Y-%m-%d')
@@ -89,7 +89,6 @@ jobs:
         git checkout -b release
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
-        git add *.yaml *.releasemrs
+        git add *.yaml *.mrs
         git commit -m "Update rules ($current_date)"
         git push origin release -f
-
