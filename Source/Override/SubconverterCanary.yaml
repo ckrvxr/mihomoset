@@ -16,6 +16,9 @@ custom:
     - name: "EDNS"
       type: select
       rule: ["[]REJECT", "[]PASS"]
+    - name: "PCDN"
+      type: select
+      rule: ["[]REJECT", "[]PASS"]
     - name: "Apple"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
@@ -46,6 +49,8 @@ custom:
       group: "AD & Privacy"
     - rule: "RULE-SET,anti-ad-edns"
       group: "EDNS"
+    - rule: "RULE-SET,anti-pcdn"
+      group: "PCDN"
     - rule: "GEOSITE,apple"
       group: Apple
     - rule: "GEOSITE,microsoft"
