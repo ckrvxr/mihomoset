@@ -62,12 +62,16 @@ custom:
       group: DIRECT
     - rule: "GEOSITE,private"
       group: DIRECT
-    - rule: "GEOIP,private,no-resolve"
-      group: DIRECT
     - rule: "GEOSITE,cn"
       group: DIRECT
-    - rule: "GEOIP,cn,no-resolve"
+    - rule: "GEOSITE,!cn"
+      group: SELECT
+    - rule: "GEOIP,cn"
       group: DIRECT
+    - rule: "GEOIP,private"
+      group: DIRECT
+    - rule: "GEOIP,!cn"
+      group: SELECT
     - rule: "MATCH"
       group: FINAL
 
