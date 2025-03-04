@@ -47,6 +47,8 @@ custom:
     #   group: "AD & Privacy"
     - rule: "RULE-SET,anti-ad-edns"
       group: "EDNS"
+    - rule: "RULE-SET,blackmatrix7httpdns"
+      group: "EDNS"
     - rule: "RULE-SET,antipcdn"
       group: "PCDN"
     - rule: "GEOSITE,apple"
