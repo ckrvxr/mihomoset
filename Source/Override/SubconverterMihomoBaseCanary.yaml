@@ -16,7 +16,7 @@ profile:
 
 dns:
   enable: true
-  listen: "127.0.0.1:53"
+  listen: "127.0.0.1:1053"
   ipv6: true
   prefer-h3: true
   default-nameserver:
@@ -25,9 +25,19 @@ dns:
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  fallback:
+    - "https://dns.google/dns-query"
+    - "https://1.1.1.1/dns-query"
+  fallback-filter:
+    geoip: true
+    geoip-code: "private,cn"
+    geosite:
+      - "gfw"
+    ipcidr:
+      - "240.0.0.0/4"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
-  fake-ip-range: 198.18.0.1/16
+  fake-ip-range: "198.18.0.1/16"
   fake-ip-filter:
     # ========= LAN =========
     - "192.168.0.0/16"
