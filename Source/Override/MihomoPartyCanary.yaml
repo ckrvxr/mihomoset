@@ -225,7 +225,6 @@ rules:
   - "RULE-SET,applicationdesktop,DIRECT"
   - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,stevenblack,AD & Privacy"
-  - "GEOSITE,category-ads-all,AD & Privacy"
   - "RULE-SET,anti-ad-edns,EDNS"
   - "RULE-SET,antipcdn,PCDN"
   - "GEOSITE,microsoft,Microsoft"
