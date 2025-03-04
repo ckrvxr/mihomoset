@@ -7,6 +7,14 @@ custom:
     - "(Official|官网|官網|Data Left|Remain|剩余|剩餘|Traffic|流量|Expire|Expiry|到期|过期|過期|效期|Time|时间|時間|Reset|重置|分割线|(\\d[\\d.]*\\s*[MG]B[^\\dA-Za-z]+|[:：]\\s*)\\d[\\d.]*\\s*GB(?!\\dA-Za-z))"
 
   custom_proxy_group:
+    - name: "AUTO"
+      type: url-test
+      rule: [".*"]
+      url: "http://www.gstatic.com/generate_204"
+      interval: 600
+      tolerance: 30
+      timeout: 1
+      hidden: true
     - name: "SELECT"
       type: select
       rule: [".*"]
@@ -37,6 +45,14 @@ custom:
       group: DIRECT
     - rule: "DOMAIN-SUFFIX,doh.pub"
       group: DIRECT
+    - rule: "IP-CIDR,8.8.8.8/32,no-resolve"
+      group: "AUTO"
+    - rule: "IP-CIDR,8.4.4.8/32,no-resolve"
+      group: "AUTO"
+    - rule: "IP-CIDR,1.1.1.1/32,no-resolve"
+      group: "AUTO"
+    - rule: "IP-CIDR,1.0.0.1/32,no-resolve"
+      group: "AUTO"
     - rule: "RULE-SET,applicationdesktop"
       group: DIRECT
     - rule: "RULE-SET,antiantifraud"
