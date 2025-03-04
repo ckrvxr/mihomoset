@@ -1,7 +1,7 @@
 log-level: warning
 
 mixed-port: 7890
-external-controller: '127.0.0.1:9090'
+external-controller: "127.0.0.1:9090"
 secret: "SubconverterMihomo"
 
 mode: rule
@@ -16,12 +16,12 @@ profile:
 
 dns:
   enable: true
-  listen: '127.0.0.1:53'
+  listen: "127.0.0.1:53"
   ipv6: true
   prefer-h3: true
   default-nameserver:
-    - '223.5.5.5'
-    - '119.29.29.29'
+    - "223.5.5.5"
+    - "119.29.29.29"
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
@@ -30,45 +30,45 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     # ========= LAN =========
-    - '192.168.0.0/16'
-    - '172.16.0.0/12'
-    - '10.0.0.0/8'
-    - '+.local'
-    - '+.localdomain'
-    - '+.localhost'
-    - '+.lan'
-    - '+.home.arpa'
-    - '+.test'
-    - '+.example'
-    - '+.invalid'
+    - "192.168.0.0/16"
+    - "172.16.0.0/12"
+    - "10.0.0.0/8"
+    - "+.local"
+    - "+.localdomain"
+    - "+.localhost"
+    - "+.lan"
+    - "+.home.arpa"
+    - "+.test"
+    - "+.example"
+    - "+.invalid"
     # ========= NTP =========
-    - '+.ntp.*.com'
-    - '+.ntp.org'
-    - '+.time.com'
-    - '+.time.*.com'
-    - '+.time.*.*.com'
+    - "+.ntp.*.com"
+    - "+.ntp.org"
+    - "+.time.com"
+    - "+.time.*.com"
+    - "+.time.*.*.com"
     # ======== STUN =========
-    - '+.stun.*'
-    - '+.stun.*.*'
-    - '+.stun.*.*.*'
-    - '+.stun.*.*.*.*'
-    - '+.stun.*.*.*.*.*'
+    - "+.stun.*"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "+.stun.*.*.*.*.*"
     # == Win Connnect Test ==
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
-    - '+.ipv6.microsoft.com'
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.ipv6.microsoft.com"
     # ======== Xbox =========
-    - '+.xboxlive.com'
-    - 'xbox.*.microsoft.com'
-    - 'xbox.*.*.microsoft.com'
+    - "+.xboxlive.com"
+    - "xbox.*.microsoft.com"
+    - "xbox.*.*.microsoft.com"
     # ======== MiJia ========
-    - 'Mijia Cloud'
-    - '+.mijia.tech'
+    - "Mijia Cloud"
+    - "+.mijia.tech"
     # ======== Other ========
-    - 'mtalk.google.com'
-    - '+.srv.nintendo.net'
+    - "mtalk.google.com"
+    - "+.srv.nintendo.net"
     - "+.mcdn.bilivideo.cn"
-    # - 'localhost.ptlogin2.qq.com'
+    # - "localhost.ptlogin2.qq.com"
 
 sniffer:
   enable: true
@@ -84,9 +84,9 @@ sniffer:
       ports: [80, 8080-8880]
       override-destination: true
   skip-domain:
-    - 'Mijia Cloud'
-    - '+.mijia.tech'
-    - '.push.apple.com'
+    - "Mijia Cloud"
+    - "+.mijia.tech"
+    - ".push.apple.com"
 
 geodata-mode: true
 geodata-loader: standard
