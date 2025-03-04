@@ -11,8 +11,9 @@ def resolve_domain(domain):
 
 def process_input(input_data):
     lines = input_data.strip().split("\n")
+    processed_domains = set()  # 用于记录已处理的域名
     output_lines = []
-    processed_domains = set()
+
     for line in lines:
         if line.startswith("  - DOMAIN-SUFFIX"):
             _, domain = line.split(",", 1)
@@ -20,12 +21,16 @@ def process_input(input_data):
             if domain not in processed_domains:
                 ips = resolve_domain(domain)
                 if ips:
+                    output_lines.append(line)  # 添加原始域名规则
                     for ip in ips:
-                        if ":" in ip:
-                            output_lines.append(f"  - IP-CIDR,{ip}/128")
-                        else:
-                            output_lines.append(f"  - IP-CIDR,{ip}/32")
+                        if ":" in ip:  # IPv6地址
+                            output_lines.append(f"  - IP-CIDR,{ip}/128,no-resolve")
+                        else:  # IPv4地址
+                            output_lines.append(f"  - IP-CIDR,{ip}/32,no-resolve")
                     processed_domains.add(domain)
+        else:
+            output_lines.append(line)  # 保留其他原始行
+
     return "\n".join(output_lines)
 
 def main():
