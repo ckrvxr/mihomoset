@@ -36,34 +36,45 @@ dns!:
   fake-ip-range: '198.18.0.1/16'
   fake-ip-filter:
     # ========= LAN =========
-    - '192.168.0.0/16'
-    - '172.16.0.0/12'
-    - '10.0.0.0/8'
-    - '+.local'
-    - '+.localdomain'
-    - '+.localhost'
-    - '+.lan'
-    - '+.home.arpa'
-    - '+.test'
-    - '+.example'
-    - '+.invalid'
+    - "192.168.0.0/16"
+    - "172.16.0.0/12"
+    - "10.0.0.0/8"
+    - "+.local"
+    - "+.localdomain"
+    - "+.localhost"
+    - "+.lan"
+    - "+.home.arpa"
+    - "+.test"
+    - "+.example"
+    - "+.invalid"
     # ========= NTP =========
-    - '+.ntp.*.com'
-    - '+.ntp.org'
-    - '+.time.com'
-    - '+.time.*.com'
-    - '+.time.*.*.com'
+    - "+.ntp.*.com"
+    - "+.ntp.org"
+    - "+.time.com"
+    - "+.time.*.com"
+    - "+.time.*.*.com"
     # ======== STUN =========
-    - '+.stun.*'
-    - '+.stun.*.*'
-    - '+.stun.*.*.*'
-    - '+.stun.*.*.*.*'
-    - '+.stun.*.*.*.*.*'
+    - "+.stun.*"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "+.stun.*.*.*.*.*"
     # == Win Connnect Test ==
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.ipv6.microsoft.com"
+    # ======== Xbox =========
+    - "+.xboxlive.com"
+    - "xbox.*.microsoft.com"
+    - "xbox.*.*.microsoft.com"
+    # ======== MiJia ========
+    - "Mijia Cloud"
+    - "+.mijia.tech"
     # ======== Other ========
-    - '+.mtalk.google.com'
+    - "mtalk.google.com"
+    - "+.srv.nintendo.net"
+    - "+.mcdn.bilivideo.cn"
+    # - "localhost.ptlogin2.qq.com"
 
 sniffer!:
     enable: true
@@ -79,28 +90,10 @@ sniffer!:
         ports: [80, 8080-8880]
         override-destination: true
     skip-domain:
-      - 'Mijia Cloud'
-      - '+.push.apple.com'
+      - "Mijia Cloud"
+      - "+.mijia.tech"
+      - "+.push.apple.com"
 
-rule-providers:
-  applications:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt'
-  anti-ad:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs'
-  stevenblack:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs'
 
 geodata-mode: true
 geodata-loader: standard
@@ -109,6 +102,56 @@ geo-update-interval: 12
 geox-url:
   geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
   geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'
+
+rule-providers:
+  application:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+  anti-anti-fraud:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/Anti-Anti-Fraud.yaml"
+  fuck-you-miui-fhosts:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs"
+  fuck-you-miui-mihosts:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs"
+  anti-ad:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
+  stevenblack:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  anti-ad-edns:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.mrs"
+  anti-pcdn:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/Anti-PCDN.yaml"
 
 proxy-groups:
   - name: 'SELECT'
@@ -135,6 +178,20 @@ proxy-groups:
   #   url: 'http://www.gstatic.com/generate_204'
   #   interval: 1800
   - name: 'AD & Privacy'
+    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png'
+    type: select
+    proxies:
+      - 'REJECT'
+      - 'PASS'
+    url: 'http://www.gstatic.com/generate_204'
+  - name: 'EDNS'
+    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png'
+    type: select
+    proxies:
+      - 'REJECT'
+      - 'PASS'
+    url: 'http://www.gstatic.com/generate_204'
+  - name: 'PCDN'
     icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png'
     type: select
     proxies:
@@ -184,12 +241,10 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
 
 rules:
-  - 'RULE-SET,applications,DIRECT'
-
+  - 'RULE-SET,application,DIRECT'
   - 'RULE-SET,anti-ad,AD & Privacy'
   - 'RULE-SET,stevenblack,AD & Privacy'
-  # - 'GEOSITE,category-ads-all,AD & Privacy'
-  # - 'GEOSITE,win-spy,AD & Privacy'
+  - 'GEOSITE,category-ads-all,AD & Privacy'
 
   - 'GEOSITE,microsoft,Microsoft'
   - 'GEOSITE,apple,Apple'
