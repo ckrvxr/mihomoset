@@ -33,14 +33,14 @@ dns:
     - '192.168.0.0/16'
     - '172.16.0.0/12'
     - '10.0.0.0/8'
-    - '*.local'
-    - '*.localdomain'
-    - '*.localhost'
-    - '*.lan'
-    - '*.home.arpa'
-    - '*.test'
-    - '*.example'
-    - '*.invalid'
+    - '+.local'
+    - '+.localdomain'
+    - '+.localhost'
+    - '+.lan'
+    - '+.home.arpa'
+    - '+.test'
+    - '+.example'
+    - '+.invalid'
     # ========= NTP =========
     - '+.ntp.*.com'
     - '+.ntp.org'
@@ -84,9 +84,9 @@ sniffer:
       ports: [80, 8080-8880]
       override-destination: true
   skip-domain:
-    - "Mijia Cloud"
+    - 'Mijia Cloud'
     - '+.mijia.tech'
-    - "+.push.apple.com"
+    - '.push.apple.com'
 
 geodata-mode: true
 geodata-loader: standard
