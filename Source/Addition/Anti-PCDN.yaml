@@ -32,7 +32,7 @@ payload:
   - DOMAIN-SUFFIX,p2pupdate.gamedl.qq.com
   - DOMAIN-SUFFIX,p2pupgrade.gamedl.qq.com
   - DOMAIN-SUFFIX,p2pvod-ws.douyucdn.cn
-  - DOMAIN-REGEX,"^.*pcdn.*biliapi\.net^"
-  - DOMAIN-REGEX,"^.*pcdn.*youku\.com^"
-  - DOMAIN-REGEX,"^.*p2p.*douyucdn\.c"
-  - DOMAIN-REGEX,"^.*p2p.*qq\.com"
+  - DOMAIN-REGEX,^.*pcdn.*biliapi\.net^
+  - DOMAIN-REGEX,^.*pcdn.*youku\.com^
+  - DOMAIN-REGEX,^.*p2p.*douyucdn\.c
+  - DOMAIN-REGEX,^.*p2p.*qq\.com
