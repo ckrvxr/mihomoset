@@ -22,9 +22,9 @@ def process_input(input_data):
                 if ips:
                     for ip in ips:
                         if ":" in ip:
-                            output_lines.append(f"  - IP-CIDR,{ip}/128,no-resolve")
+                            output_lines.append(f"  - IP-CIDR,{ip}/128")
                         else:
-                            output_lines.append(f"  - IP-CIDR,{ip}/32,no-resolve")
+                            output_lines.append(f"  - IP-CIDR,{ip}/32")
                     processed_domains.add(domain)
     return "\n".join(output_lines)
 
