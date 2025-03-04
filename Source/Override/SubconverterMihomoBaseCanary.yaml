@@ -67,6 +67,7 @@ dns:
     # ======== Other ========
     - "mtalk.google.com"
     - "+.srv.nintendo.net"
+    - "+.mcdn.bilivideo.cn"
     # - "localhost.ptlogin2.qq.com"
 
 sniffer:
