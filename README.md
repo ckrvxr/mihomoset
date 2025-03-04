@@ -61,7 +61,7 @@ https://api.sublink.dev/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/ref
 
 ### 📦 可用规则集列表
 
-（可用规则集在 Release 分支中）
+（可用规则集在 [Release](https://github.com/Ckrvxr/MihomoRules/tree/release) 分支中）
 
 ### 🛠️ 集成示例
 ```yaml
