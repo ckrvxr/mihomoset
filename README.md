@@ -89,3 +89,15 @@ rules:
 ---
 
 > 📌 本项目遵循 [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) 协议，使用规则即视为同意授权条款。
+
+---
+
+# 特别感谢下列项目
+
+- https://github.com/MetaCubeX/mihomo
+- https://github.com/privacy-protection-tools/anti-AD
+- https://github.com/StevenBlack/hosts
+- https://github.com/tindy2013/subconverter
+- https://github.com/zsokami/ACL4SSR
+- https://github.com/youshandefeiyang/sub-web-modify
+- https://github.com/LoopDns/Fuck-you-MIUI/
