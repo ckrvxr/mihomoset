@@ -1,7 +1,7 @@
 log-level: warning
 
 mixed-port: 7890
-external-controller: 127.0.0.1:9090
+external-controller: '127.0.0.1:9090'
 secret: "SubconverterMihomo"
 
 mode: rule
@@ -16,15 +16,15 @@ profile:
 
 dns:
   enable: true
-  listen: 127.0.0.1:53
+  listen: '127.0.0.1:53'
   ipv6: true
   prefer-h3: true
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - '223.5.5.5'
+    - '119.29.29.29'
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: 198.18.0.1/16
