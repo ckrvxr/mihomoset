@@ -139,3 +139,9 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  anti-pcdn:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/Anti-PCDN.yaml"
