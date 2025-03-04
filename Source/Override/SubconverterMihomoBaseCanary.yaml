@@ -139,6 +139,12 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.mrs"
+  blackmatrix7httpdns:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BlockHttpDNS/BlockHttpDNS_No_Resolve.yaml"
   antipcdn:
     type: http
     behavior: classical
