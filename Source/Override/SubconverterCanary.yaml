@@ -33,6 +33,10 @@ custom:
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
 
   rulesets:
+    - rule: "DOMAIN-SUFFIX,dns.alidns.com"
+      group: DIRECT
+    - rule: "DOMAIN-SUFFIX,doh.pub"
+      group: DIRECT
     - rule: "RULE-SET,applicationdesktop"
       group: DIRECT
     - rule: "RULE-SET,antiantifraud"
