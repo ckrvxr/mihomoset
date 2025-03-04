@@ -30,7 +30,17 @@ custom:
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
 
   rulesets:
+    - rule: "RULE-SET,application"
+      group: DIRECT
+    - rule: "RULE-SET,anti-anti-fraud"
+      group: REJECT
+    - rule: "RULE-SET,fuck-you-miui-fhosts"
+      group: 'AD & Privacy'
+    - rule: "RULE-SET,fuck-you-miui-mihosts"
+      group: 'AD & Privacy'
     - rule: "RULE-SET,anti-ad"
+      group: 'AD & Privacy'
+    - rule: "RULE-SET,stevenblack"
       group: 'AD & Privacy'
     - rule: "GEOSITE,category-ads-all"
       group: 'AD & Privacy'
