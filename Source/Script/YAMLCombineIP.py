@@ -1,4 +1,4 @@
-import socket
+import dns.resolver
 import sys
 
 DEFAULT_DNS_SERVERS = [
@@ -8,20 +8,13 @@ DEFAULT_DNS_SERVERS = [
 
 def resolve_domain_with_dns(domain, dns_server):
     try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.settimeout(5)
-
-        query = f"GET /?name={domain} HTTP/1.1\r\nHost: {dns_server}\r\n\r\n"
-        sock.sendto(query.encode(), (dns_server, 53))
-        response, _ = sock.recvfrom(512)
-
-        addresses = response.decode().split("\n")
-        ips = [addr.strip() for addr in addresses if addr.strip()]
-        return ips
+        resolver = dns.resolver.Resolver()
+        resolver.nameservers = [dns_server]
+        answers = resolver.resolve(domain, "A")  # 查询 A 记录
+        return [answer.to_text() for answer in answers]
     except Exception as e:
+        print(f"Error resolving {domain} with {dns_server}: {e}")
         return []
-    finally:
-        sock.close()
 
 def resolve_domain(domain, dns_servers):
     all_ips = set()
@@ -55,6 +48,10 @@ def process_input(input_data, dns_servers):
     return "\n".join(output_lines)
 
 def main():
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <input_file> <output_file>")
+        sys.exit(1)
+
     input_file = sys.argv[1]
     output_file = sys.argv[2]
 
