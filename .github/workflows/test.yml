@@ -46,10 +46,10 @@ jobs:
       run: curl -o anti-AD-EDNS.domains https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/refs/heads/master/discretion/dns.txt
 
     - name: Convert hosts to Mihomo rules yaml (Domain) for anti-AD-EDNS
-      run: python3 Source/Script/domains2yaml.py anti-AD-EDNS.domains anti-AD-EDNS-Domain.yaml  
+      run: python3 Source/Script/domains2yaml.py anti-AD-EDNS.domains anti-AD-EDNS.yaml  
 
-    - name: Convert Mihomo rules yaml (Domain) to Mihomo rules yaml (IPCIDR) for anti-AD-EDNS
-      run: python3 Source/Script/yaml2ip.py anti-AD-EDNS-Domain.yaml anti-AD-EDNS-IPCIDR.yaml
+    - name: Combine Mihomo rules yaml (Domain) With IP for anti-AD-EDNS
+      run: python3 Source/Script/yamlcombineip.py anti-AD-EDNS.yaml anti-AD-EDNS.yaml
 
     - name: Download hosts file for StevenBlack
       run: curl -o StevenBlack.hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
