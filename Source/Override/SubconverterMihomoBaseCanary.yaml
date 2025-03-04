@@ -2,7 +2,7 @@ log-level: warning
 
 mixed-port: 7890
 external-controller: 127.0.0.1:9090
-secret: 'SubconverterMihomo'
+secret: "SubconverterMihomo"
 
 mode: rule
 find-process-mode: strict
@@ -93,8 +93,8 @@ geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 12
 geox-url:
-  geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
-  geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
 
 rule-providers:
   application:
@@ -102,34 +102,34 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt'
+    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
   anti-anti-fraud:
     type: http
     behavior: classical
     format: yaml
     interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/Anti-Anti-Fraud.yaml'
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/Anti-Anti-Fraud.yaml"
   fuck-you-miui-fhosts:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs'
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs"
   fuck-you-miui-mihosts:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs'
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs"
   anti-ad:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs'
+    url: "https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
   stevenblack:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: 'https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs'
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
