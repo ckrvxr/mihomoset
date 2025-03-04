@@ -66,9 +66,9 @@ custom:
       group: DIRECT
     - rule: "GEOSITE,!cn"
       group: SELECT
-    - rule: "GEOIP,cn"
-      group: DIRECT
     - rule: "GEOIP,private"
+      group: DIRECT
+    - rule: "GEOIP,cn"
       group: DIRECT
     - rule: "GEOIP,!cn"
       group: SELECT
