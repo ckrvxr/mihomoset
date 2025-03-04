@@ -128,12 +128,12 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.mrs"
-  anti-pcdn:
+  antipcdn:
     type: http
     behavior: domain
     format: yaml
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/Anti-PCDN.yaml"
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
 
 proxy-groups:
   - name: "SELECT"
@@ -228,7 +228,7 @@ rules:
   - "RULE-SET,stevenblack,AD & Privacy"
   - "GEOSITE,category-ads-all,AD & Privacy"
   - "RULE-SET,anti-ad-edns,EDNS"
-  - "RULE-SET,anti-pcdn,PCDN"
+  - "RULE-SET,antipcdn,PCDN"
   - "GEOSITE,microsoft,Microsoft"
   - "GEOSITE,apple,Apple"
   - "GEOSITE,google,Google"
