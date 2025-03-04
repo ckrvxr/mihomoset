@@ -35,7 +35,7 @@ custom:
   rulesets:
     - rule: "RULE-SET,application"
       group: DIRECT
-    - rule: "RULE-SET,anti-anti-fraud"
+    - rule: "RULE-SET,antiantifraud"
       group: REJECT
     - rule: "RULE-SET,fuck-you-miui-fhosts"
       group: "AD & Privacy"
@@ -49,7 +49,7 @@ custom:
       group: "AD & Privacy"
     - rule: "RULE-SET,anti-ad-edns"
       group: "EDNS"
-    - rule: "RULE-SET,anti-pcdn"
+    - rule: "RULE-SET,antipcdn"
       group: "PCDN"
     - rule: "GEOSITE,apple"
       group: Apple
