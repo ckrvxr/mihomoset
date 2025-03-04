@@ -86,7 +86,7 @@ sniffer:
   skip-domain:
     - "Mijia Cloud"
     - "+.mijia.tech"
-    - ".push.apple.com"
+    - "+.push.apple.com"
 
 geodata-mode: true
 geodata-loader: standard
