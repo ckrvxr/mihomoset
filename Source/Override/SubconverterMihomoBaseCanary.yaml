@@ -25,6 +25,16 @@ dns:
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+  nameserver-policy:
+    "geosite:private":
+      - "https://dns.alidns.com/dns-query"
+      - "https://doh.pub/dns-query"
+    "geosite:cn":
+      - "https://dns.alidns.com/dns-query"
+      - "https://doh.pub/dns-query"
+    "geosite:!cn":
+      - "https://dns.google/dns-query"
+      - "https://1.1.1.1/dns-query"
   fallback:
     - "https://dns.google/dns-query"
     - "https://1.1.1.1/dns-query"
