@@ -37,7 +37,7 @@ https://api.sublink.dev/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/ref
 
 | 参数名 | 必需 | 示例值 | 功能说明 |
 |---------|-----|---------|---------|
-| config  | ✔️ | [Subconverter.yaml](https://...) | 规则模板地址 |
+| config  | ✔️ | http://....Subconverter.yaml | 规则模板地址 |
 | target  | ✔️ | clash | 输出格式 |
 | udp     |   | true | 启用UDP转发 |
 | url     | ✔️ | 您的订阅链接 | 原始订阅地址 |
