@@ -245,19 +245,14 @@ rules:
   - 'RULE-SET,anti-ad,AD & Privacy'
   - 'RULE-SET,stevenblack,AD & Privacy'
   - 'GEOSITE,category-ads-all,AD & Privacy'
-
   - 'GEOSITE,microsoft,Microsoft'
   - 'GEOSITE,apple,Apple'
   - 'GEOSITE,google,Google'
-
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
   # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
   - 'GEOSITE,category-games@cn,DIRECT'
-
   - 'GEOSITE,private,DIRECT'
   - 'GEOIP,private,DIRECT,no-resolve'
-
   - 'GEOSITE,cn,DIRECT'
   - 'GEOIP,cn,DIRECT,no-resolve'
-
   - 'MATCH,FINAL'
