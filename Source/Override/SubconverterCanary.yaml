@@ -64,9 +64,9 @@ custom:
       group: DIRECT
     - rule: "GEOIP,private,no-resolve"
       group: DIRECT
-    - rule: "GEOSITE,CN"
+    - rule: "GEOSITE,cn"
       group: DIRECT
-    - rule: "GEOIP,CN,no-resolve"
+    - rule: "GEOIP,cn,no-resolve"
       group: DIRECT
     - rule: "MATCH"
       group: FINAL
