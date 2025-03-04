@@ -122,7 +122,7 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
-  anti-edns:
+  anti-ad-edns:
     type: http
     behavior: domain
     format: mrs
@@ -227,7 +227,7 @@ rules:
   - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,stevenblack,AD & Privacy"
   - "GEOSITE,category-ads-all,AD & Privacy"
-  - "RULE-SET,anti-edns,EDNS"
+  - "RULE-SET,anti-ad-edns,EDNS"
   - "RULE-SET,anti-pcdn,PCDN"
   - "GEOSITE,microsoft,Microsoft"
   - "GEOSITE,apple,Apple"
