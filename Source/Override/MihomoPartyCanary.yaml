@@ -1,8 +1,8 @@
 log-level: warning
 
 mixed-port: 7890
-external-controller: '127.0.0.1:9090'
-secret: 'MihomoParty'
+external-controller: "127.0.0.1:9090"
+secret: "MihomoParty"
 
 mode: rule
 find-process-mode: strict
@@ -22,18 +22,18 @@ profile:
 # is no need to configure fallback here.
 dns!:
   enable: true
-  listen: '127.0.0.1:53'
+  listen: "127.0.0.1:53"
   ipv6: true
   prefer-h3: true
   default-nameserver:
-    - '223.5.5.5'
-    - '119.29.29.29'
+    - "223.5.5.5"
+    - "119.29.29.29"
   nameserver:
-    - 'https://dns.alidns.com/dns-query'
-    - 'https://doh.pub/dns-query'
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
-  fake-ip-range: '198.18.0.1/16'
+  fake-ip-range: "198.18.0.1/16"
   fake-ip-filter:
     # ========= LAN =========
     - "192.168.0.0/16"
@@ -100,8 +100,8 @@ geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 12
 geox-url:
-  geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
-  geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
 
 rule-providers:
   application:
@@ -136,107 +136,107 @@ rule-providers:
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/Anti-PCDN.yaml"
 
 proxy-groups:
-  - name: 'SELECT'
-    icon: 'https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png'
+  - name: "SELECT"
+    icon: "https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png"
     type: select
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置
     # proxies:
-    #   - 'AUTO'
-    url: 'http://www.gstatic.com/generate_204'
-  # - name: 'AUTO'
-  #   icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png'
+    #   - "AUTO"
+    url: "http://www.gstatic.com/generate_204"
+  # - name: "AUTO"
+  #   icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png"
   #   type: url-test
   #   include-all: true
   #   exclude-filter: (?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置
-  #   url: 'http://www.gstatic.com/generate_204'
+  #   url: "http://www.gstatic.com/generate_204"
   #   interval: 1800
   #   tolerance: 50
-  # - name: 'FALLBACK'
-  #   icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png'
+  # - name: "FALLBACK"
+  #   icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png"
   #   type: fallback
   #   include-all: true
   #   exclude-filter: (?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置
-  #   url: 'http://www.gstatic.com/generate_204'
+  #   url: "http://www.gstatic.com/generate_204"
   #   interval: 1800
-  - name: 'AD & Privacy'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png'
+  - name: "AD & Privacy"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png"
     type: select
     proxies:
-      - 'REJECT'
-      - 'PASS'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'EDNS'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png'
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "EDNS"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png"
     type: select
     proxies:
-      - 'REJECT'
-      - 'PASS'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'PCDN'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png'
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "PCDN"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png"
     type: select
     proxies:
-      - 'REJECT'
-      - 'PASS'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'Microsoft'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png'
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "Microsoft"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.msftconnecttest.com/connecttest.txt'
-  - name: 'Apple'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.msftconnecttest.com/connecttest.txt"
+  - name: "Apple"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://captive.apple.com'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://captive.apple.com"
   # https://www.yetpage.com/archives/278
-  - name: 'Google'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png'
+  - name: "Google"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'FINAL'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "FINAL"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'GLOBAL'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "GLOBAL"
+    icon: "https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.gstatic.com/generate_204'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.gstatic.com/generate_204"
 
 rules:
-  - 'RULE-SET,application,DIRECT'
-  - 'RULE-SET,anti-ad,AD & Privacy'
-  - 'RULE-SET,stevenblack,AD & Privacy'
-  - 'GEOSITE,category-ads-all,AD & Privacy'
-  - 'RULE-SET,anti-edns,EDNS'
-  - 'RULE-SET,anti-pcdn,PCDN'
-  - 'GEOSITE,microsoft,Microsoft'
-  - 'GEOSITE,apple,Apple'
-  - 'GEOSITE,google,Google'
+  - "RULE-SET,application,DIRECT"
+  - "RULE-SET,anti-ad,AD & Privacy"
+  - "RULE-SET,stevenblack,AD & Privacy"
+  - "GEOSITE,category-ads-all,AD & Privacy"
+  - "RULE-SET,anti-edns,EDNS"
+  - "RULE-SET,anti-pcdn,PCDN"
+  - "GEOSITE,microsoft,Microsoft"
+  - "GEOSITE,apple,Apple"
+  - "GEOSITE,google,Google"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
   # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
-  - 'GEOSITE,category-games@cn,DIRECT'
-  - 'GEOSITE,private,DIRECT'
-  - 'GEOIP,private,DIRECT,no-resolve'
-  - 'GEOSITE,cn,DIRECT'
-  - 'GEOIP,cn,DIRECT,no-resolve'
-  - 'MATCH,FINAL'
+  - "GEOSITE,category-games@cn,DIRECT"
+  - "GEOSITE,private,DIRECT"
+  - "GEOIP,private,DIRECT,no-resolve"
+  - "GEOSITE,cn,DIRECT"
+  - "GEOIP,cn,DIRECT,no-resolve"
+  - "MATCH,FINAL"
