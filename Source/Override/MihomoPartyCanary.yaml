@@ -227,6 +227,8 @@ rules:
   - 'RULE-SET,anti-ad,AD & Privacy'
   - 'RULE-SET,stevenblack,AD & Privacy'
   - 'GEOSITE,category-ads-all,AD & Privacy'
+  - 'RULE-SET,anti-edns,EDNS'
+  - 'RULE-SET,anti-pcdn,PCDN'
   - 'GEOSITE,microsoft,Microsoft'
   - 'GEOSITE,apple,Apple'
   - 'GEOSITE,google,Google'
