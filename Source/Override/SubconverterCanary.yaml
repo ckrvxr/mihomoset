@@ -31,7 +31,7 @@ custom:
     - name: "FINAL"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: "⭐"
+    - name: "AUTO"
       type: url-test
       rule: [".*"]
       url: "http://www.gstatic.com/generate_204"
@@ -44,13 +44,13 @@ custom:
     - rule: "DOMAIN-SUFFIX,doh.pub"
       group: DIRECT
     - rule: "IP-CIDR,8.8.8.8/32,no-resolve"
-      group: "⭐"
+      group: "AUTO"
     - rule: "IP-CIDR,8.4.4.8/32,no-resolve"
-      group: "⭐"
+      group: "AUTO"
     - rule: "IP-CIDR,1.1.1.1/32,no-resolve"
-      group: "⭐"
+      group: "AUTO"
     - rule: "IP-CIDR,1.0.0.1/32,no-resolve"
-      group: "⭐"
+      group: "AUTO"
     - rule: "RULE-SET,applicationdesktop"
       group: DIRECT
     - rule: "RULE-SET,antiantifraud"
