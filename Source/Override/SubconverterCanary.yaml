@@ -33,7 +33,7 @@ custom:
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
 
   rulesets:
-    - rule: "RULE-SET,application"
+    - rule: "RULE-SET,applicationdesktop"
       group: DIRECT
     - rule: "RULE-SET,antiantifraud"
       group: REJECT
