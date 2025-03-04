@@ -97,7 +97,7 @@ geox-url:
   geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
 
 rule-providers:
-  application:
+  applicationdesktop:
     type: http
     behavior: classical
     format: yaml
