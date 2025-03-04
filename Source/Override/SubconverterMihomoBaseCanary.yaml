@@ -26,25 +26,12 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
   nameserver-policy:
-    "geosite:private":
-      - "https://dns.alidns.com/dns-query"
-      - "https://doh.pub/dns-query"
-    "geosite:cn":
+    "geosite:private,cn":
       - "https://dns.alidns.com/dns-query"
       - "https://doh.pub/dns-query"
     "geosite:!cn":
       - "https://dns.google/dns-query"
       - "https://1.1.1.1/dns-query"
-  fallback:
-    - "https://dns.google/dns-query"
-    - "https://1.1.1.1/dns-query"
-  fallback-filter:
-    geoip: true
-    geoip-code: "cn"
-    geosite:
-      - "gfw"
-    ipcidr:
-      - "240.0.0.0/4"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
