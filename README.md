@@ -1,8 +1,6 @@
 # MihomoRules
 
-MihomoRules is a rule library designed for [Mihomo](https://github.com/MetaCubeX/mihomo), providing ad-blocking, privacy protection, and anti-fraud features.
-
----
+---MihomoRules is a rule library designed for [Mihomo](https://github.com/MetaCubeX/mihomo)(Clash Meta), providing AD-Blocking, Privacy Protection, and AntiAntiFraud features.
 
 ## 🎛️ Override Rule Configuration Guide
 
