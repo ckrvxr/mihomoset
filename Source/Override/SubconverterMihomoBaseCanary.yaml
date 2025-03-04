@@ -30,7 +30,9 @@ dns:
     - "https://1.1.1.1/dns-query"
   fallback-filter:
     geoip: true
-    geoip-code: "private,cn"
+    geoip-code:
+      - "private"
+      - "cn"
     geosite:
       - "gfw"
     ipcidr:
