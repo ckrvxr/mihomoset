@@ -24,7 +24,7 @@ def convert_domains_to_yaml(input_file, output_file):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python3 domains2yaml.py <input_file> <output_file>")
+        print("Usage: python3 DomainsToYAML.py <input_file> <output_file>")
         sys.exit(1)
     
     input_file = sys.argv[1]

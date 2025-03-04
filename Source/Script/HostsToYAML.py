@@ -41,7 +41,7 @@ def convert_hosts_to_yaml(hosts_file, output_file):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python3 hosts2yaml.py <input_file> <output_file>")
+        print("Usage: python3 HostsToYAML.py <input_file> <output_file>")
         sys.exit(1)
     
     input_file = sys.argv[1]
