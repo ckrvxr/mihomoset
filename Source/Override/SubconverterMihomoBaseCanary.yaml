@@ -141,7 +141,7 @@ rule-providers:
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.mrs"
   antipcdn:
     type: http
-    behavior: domain
+    behavior: classical
     format: yaml
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
