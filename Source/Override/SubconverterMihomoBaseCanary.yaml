@@ -81,6 +81,21 @@ dns:
     - "+.mcdn.bilivideo.cn"
     # - "localhost.ptlogin2.qq.com"
 
+
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+  dns-hijack:
+    - udp://any:53
+    - tcp://any:53
+  mtu: 9000
+  
+
+
 sniffer:
   enable: true
   parse-pure-ip: true
@@ -98,7 +113,7 @@ sniffer:
     - "Mijia Cloud"
     - "+.mijia.tech"
     - "+.push.apple.com"
-
+  
 geodata-mode: true
 geodata-loader: standard
 geo-auto-update: true
