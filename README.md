@@ -14,7 +14,7 @@ MihomoRules is a rule library designed for [Mihomo](https://github.com/MetaCubeX
 ```
 **Steps**
 1. Download the configuration file.
-2. Open the MihomoParty console.
+2. Open the MihomoParty panle.
 3. Go to the "Override Configuration" interface and upload the file.
 4. Enable the "Global Application" switch.
 5. Save.
