@@ -7,25 +7,25 @@ custom:
     - "(Official|官网|官網|Data Left|Remain|剩余|剩餘|Traffic|流量|Expire|Expiry|到期|过期|過期|效期|Time|时间|時間|Reset|重置|分割线|(\\d[\\d.]*\\s*[MG]B[^\\dA-Za-z]+|[:：]\\s*)\\d[\\d.]*\\s*GB(?!\\dA-Za-z))"
 
   custom_proxy_group:
-    - name: 'SELECT'
+    - name: "SELECT"
       type: select
       rule: [".*"]
-    - name: 'AD & Privacy'
+    - name: "AD & Privacy"
       type: select
       rule: ["[]REJECT", "[]PASS"]
-    - name: 'EDNS'
+    - name: "EDNS"
       type: select
       rule: ["[]REJECT", "[]PASS"]
-    - name: 'Apple'
+    - name: "Apple"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: 'Microsoft'
+    - name: "Microsoft"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: 'Google'
+    - name: "Google"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: 'FINAL'
+    - name: "FINAL"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
 
@@ -35,15 +35,15 @@ custom:
     - rule: "RULE-SET,anti-anti-fraud"
       group: REJECT
     - rule: "RULE-SET,fuck-you-miui-fhosts"
-      group: 'AD & Privacy'
+      group: "AD & Privacy"
     - rule: "RULE-SET,fuck-you-miui-mihosts"
-      group: 'AD & Privacy'
+      group: "AD & Privacy"
     - rule: "RULE-SET,anti-ad"
-      group: 'AD & Privacy'
+      group: "AD & Privacy"
     - rule: "RULE-SET,stevenblack"
-      group: 'AD & Privacy'
+      group: "AD & Privacy"
     - rule: "GEOSITE,category-ads-all"
-      group: 'AD & Privacy'
+      group: "AD & Privacy"
     - rule: "GEOSITE,apple"
       group: Apple
     - rule: "GEOSITE,microsoft"
