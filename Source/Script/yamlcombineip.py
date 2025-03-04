@@ -11,7 +11,7 @@ def resolve_domain(domain):
 
 def process_input(input_data):
     lines = input_data.strip().split("\n")
-    processed_domains = set()  # 用于记录已处理的域名
+    processed_domains = set()
     output_lines = []
 
     for line in lines:
@@ -21,15 +21,15 @@ def process_input(input_data):
             if domain not in processed_domains:
                 ips = resolve_domain(domain)
                 if ips:
-                    output_lines.append(line)  # 添加原始域名规则
+                    output_lines.append(line)
                     for ip in ips:
-                        if ":" in ip:  # IPv6地址
+                        if ":" in ip:
                             output_lines.append(f"  - IP-CIDR,{ip}/128,no-resolve")
-                        else:  # IPv4地址
+                        else:
                             output_lines.append(f"  - IP-CIDR,{ip}/32,no-resolve")
                     processed_domains.add(domain)
         else:
-            output_lines.append(line)  # 保留其他原始行
+            output_lines.append(line)
 
     return "\n".join(output_lines)
 
@@ -38,9 +38,11 @@ def main():
     output_file = sys.argv[2]
     with open(input_file, "r", encoding="utf-8") as file:
         input_data = file.read()
-    output_data = process_input(input_data)
+    if not input_data.strip().startswith("payload:"):
+        output_data = "payload:\n" + process_input(input_data)
+    else:
+        output_data = process_input(input_data)
     with open(output_file, "w", encoding="utf-8") as file:
-        file.write("payload:\n")
         file.write(output_data)
 
 if __name__ == "__main__":
