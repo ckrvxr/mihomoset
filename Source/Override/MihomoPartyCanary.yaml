@@ -124,10 +124,10 @@ rule-providers:
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
   anti-ad-edns:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.yaml"
   antipcdn:
     type: http
     behavior: classical
