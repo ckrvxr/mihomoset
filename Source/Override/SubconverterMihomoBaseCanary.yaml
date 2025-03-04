@@ -112,13 +112,13 @@ rule-providers:
   fuck-you-miui-fhosts:
     type: http
     behavior: domain
-    format: yaml
+    format: mrs
     interval: 43200
     url: 'https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs'
   fuck-you-miui-mihosts:
     type: http
     behavior: domain
-    format: yaml
+    format: mrs
     interval: 43200
     url: 'https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs'
   anti-ad:
