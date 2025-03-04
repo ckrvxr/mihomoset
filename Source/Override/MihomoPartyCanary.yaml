@@ -122,7 +122,7 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
-  anti-ad-edns:
+  anti-edns:
     type: http
     behavior: domain
     format: mrs
