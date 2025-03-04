@@ -104,7 +104,7 @@ geox-url:
   geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
 
 rule-providers:
-  application:
+  applicationdesktop:
     type: http
     behavior: classical
     format: yaml
@@ -223,7 +223,7 @@ proxy-groups:
     url: "http://www.gstatic.com/generate_204"
 
 rules:
-  - "RULE-SET,application,DIRECT"
+  - "RULE-SET,applicationdesktop,DIRECT"
   - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,stevenblack,AD & Privacy"
   - "GEOSITE,category-ads-all,AD & Privacy"
