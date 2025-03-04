@@ -48,8 +48,8 @@ Below is a table of the main functions included in the Mihomo override package:
 
 | Function Name          | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
-| antiantifraud          | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute to creating a world without fraud. |
-| fuck-you-miui          | Strongly blocks MIUI telemetry.                                             |
+| AntiAntiFraud          | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute to creating a world without fraud. |
+| Fuck-You-MIUI          | Strongly blocks MIUI telemetry.                                             |
 | applicationdesktop     | Prevents proxy tools and P2P download software from using the proxy.        |
 | anti-AD                | Blocks domestic ads and telemetry.                                          |
 | StevenBlack            | Blocks global ads, telemetry, and malicious websites.                       |
