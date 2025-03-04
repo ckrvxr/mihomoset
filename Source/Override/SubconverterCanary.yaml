@@ -38,6 +38,7 @@ custom:
       interval: 600
       tolerance: 30
       timeout: 1
+      
   rulesets:
     - rule: "DOMAIN-SUFFIX,dns.alidns.com"
       group: DIRECT
