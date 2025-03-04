@@ -37,8 +37,6 @@ custom:
       group: DIRECT
     - rule: "RULE-SET,antiantifraud"
       group: REJECT
-    - rule: "RULE-SET,adprivacydrop"
-      group: REJECT-DROP
     - rule: "RULE-SET,fuck-you-miui-fhosts"
       group: "AD & Privacy"
     - rule: "RULE-SET,fuck-you-miui-mihosts"
