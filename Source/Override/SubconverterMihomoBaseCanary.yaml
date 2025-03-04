@@ -127,6 +127,12 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
+  anti-ad-edns:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.mrs"
   stevenblack:
     type: http
     behavior: domain
