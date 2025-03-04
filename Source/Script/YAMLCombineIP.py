@@ -3,9 +3,7 @@ import sys
 
 DEFAULT_DNS_SERVERS = [
     "8.8.8.8",
-    "1.1.1.1",
-    "223.5.5.5",
-    "1.12.12.12"
+    "223.5.5.5"
 ]
 
 def resolve_domain_with_dns(domain, dns_server):
