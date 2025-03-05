@@ -72,7 +72,7 @@ custom:
     # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
     - rule: "GEOSITE,category-games@cn"
       group: DIRECT
-   - rule: "GEOSITE,microsoft"
+    - rule: "GEOSITE,microsoft"
       group: Microsoft
     - rule: "GEOSITE,apple"
       group: Apple
