@@ -40,14 +40,6 @@ custom:
       timeout: 1
       
   rulesets:
-    - rule: "DOMAIN-SUFFIX,dns.alidns.com"
-      group: DIRECT
-    - rule: "DOMAIN-SUFFIX,doh.pub"
-      group: DIRECT
-    - rule: "DOMAIN-SUFFIX,dns.google"
-      group: "AUTO"
-    - rule: "DOMAIN-SUFFIX,cloudflare-dns.com"
-      group: "AUTO"
     - rule: "RULE-SET,applicationdesktop"
       group: DIRECT
     - rule: "RULE-SET,antiantifraud"
