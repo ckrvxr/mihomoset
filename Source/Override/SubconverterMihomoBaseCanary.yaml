@@ -34,7 +34,6 @@ dns:
     geoip-code: cn
     geosite:
       - "gfw"
-      - "!cn"
     ipcidr:
       - ＂240.0.0.0/4＂
       - ＂0.0.0.0/32＂
