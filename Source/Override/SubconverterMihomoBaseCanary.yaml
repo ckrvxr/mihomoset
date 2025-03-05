@@ -19,7 +19,7 @@ dns:
   listen: "127.0.0.1:1053"
   ipv6: true
   prefer-h3: true
-  respect-rules: true
+  respect-rules: false
   default-nameserver:
     - "223.5.5.5"
     - "119.29.29.29"
@@ -34,8 +34,8 @@ dns:
       - "https://dns.alidns.com/dns-query"
       - "https://doh.pub/dns-query"
     "geosite:!cn":
-      - "https://dns.google/dns-query"
-      - "https://cloudflare-dns.com/dns-query"
+      - "https://dns.google/dns-query#AUTO"
+      - "https://cloudflare-dns.com/dns-query#AUTO"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
