@@ -22,8 +22,9 @@ dns:
   respect-rules: false
   default-nameserver:
     - "223.5.5.5"
-    - "119.29.29.29"
+    - "1.12.12.12"
   proxy-server-nameserver:
+    - "https://dns.alidns.com/dns-query#DIRECT"
     - "https://doh.pub/dns-query#DIRECT"
   nameserver:
     - "https://dns.alidns.com/dns-query#DIRECT"
