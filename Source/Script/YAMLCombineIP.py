@@ -14,21 +14,10 @@ def process_input(input_data):
     processed_domains = set()
     output_lines = []
 
-    # 添加一个集合来存储需要移除的域名
-    domains_to_remove = {
-        "dns.alidns.com",
-        "doh.pub",
-        "dns.google",
-        "cloudflare-dns.com"
-    }
-
     for line in lines:
         if line.startswith("  - DOMAIN-SUFFIX"):
             _, domain = line.split(",", 1)
             domain = domain.strip()
-            # 如果域名在需要移除的列表中，跳过处理
-            if domain in domains_to_remove:
-                continue
             if domain not in processed_domains:
                 ips = resolve_domain(domain)
                 if ips:
