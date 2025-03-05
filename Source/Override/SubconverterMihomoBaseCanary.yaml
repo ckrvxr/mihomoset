@@ -23,19 +23,23 @@ dns:
   default-nameserver:
     - "223.5.5.5"
     - "119.29.29.29"
-  proxy-server-nameserver:
-    - "https://dns.alidns.com/dns-query"
-    - "https://doh.pub/dns-query"
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
-  nameserver-policy:
-    "geosite:private,cn":
-      - "https://dns.alidns.com/dns-query"
-      - "https://doh.pub/dns-query"
-    "geosite:!cn":
-      - "https://dns.google/dns-query#AUTO"
-      - "https://cloudflare-dns.com/dns-query#AUTO"
+  fallback:
+    - "https://dns.google/dns-query#AUTO"
+    - "https://cloudflare-dns.com/dns-query#AUTO"
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
+    ipcidr:
+      - ＂240.0.0.0/4＂
+      - ＂0.0.0.0/32＂
+      - "127.0.0.1/32＂
+    domain:
+      - ＂+.google.cn＂
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
