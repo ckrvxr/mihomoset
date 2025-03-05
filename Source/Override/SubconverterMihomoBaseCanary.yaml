@@ -26,22 +26,14 @@ dns:
   proxy-server-nameserver:
     - "https://dns.alidns.com/dns-query#DIRECT"
     - "https://doh.pub/dns-query#DIRECT"
-    - "tls://223.5.5.5#DIRECT"
-    - "tls://1.12.12.12#DIRECT"
     - "https://dns.google/dns-query#DIRECT"
     - "https://cloudflare-dns.com/dns-query#DIRECT"
-    - "tls://8.8.8.8#DIRECT"
-    - "tls://1.1.1.1#DIRECT"
   nameserver:
     - "https://dns.alidns.com/dns-query#DIRECT"
     - "https://doh.pub/dns-query#DIRECT"
-    - "tls://223.5.5.5#DIRECT"
-    - "tls://1.12.12.12#DIRECT"
   fallback:
     - "https://dns.google/dns-query#AUTO"
     - "https://cloudflare-dns.com/dns-query#AUTO"
-    - "tls://8.8.8.8#AUTO"
-    - "tls://1.1.1.1#AUTO"
   fallback-filter:
     geoip: true
     geoip-code: cn
