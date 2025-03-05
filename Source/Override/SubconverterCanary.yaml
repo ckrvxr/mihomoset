@@ -44,14 +44,10 @@ custom:
       group: DIRECT
     - rule: "DOMAIN-SUFFIX,doh.pub"
       group: DIRECT
-    - rule: "IP-CIDR,8.8.8.8/32"
-      group: "AUTO,no-resolve"
-    - rule: "IP-CIDR,8.4.4.8/32"
-      group: "AUTO,no-resolve"
-    - rule: "IP-CIDR,1.1.1.1/32"
-      group: "AUTO,no-resolve"
-    - rule: "IP-CIDR,1.0.0.1/32"
-      group: "AUTO,no-resolve"
+    - rule: "DOMAIN-SUFFIX,cloudflare-dns.com"
+      group: "AUTO"
+    - rule: "DOMAIN-SUFFIX,dns.google"
+      group: "AUTO"
     - rule: "RULE-SET,applicationdesktop"
       group: DIRECT
     - rule: "RULE-SET,antiantifraud"
