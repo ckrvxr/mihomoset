@@ -1,68 +1,84 @@
 custom:
   enable_rule_generator: true
   overwrite_original_rules: true
-  clash_rule_base: "https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/main/Source/Override/SubconverterMihomoBase.yaml"
+  clash_rule_base: "https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/main/Source/Override/SubconverterMihomoBaseCanary.yaml"
   
   exclude_remarks:
     - "(Official|官网|官網|Data Left|Remain|剩余|剩餘|Traffic|流量|Expire|Expiry|到期|过期|過期|效期|Time|时间|時間|Reset|重置|分割线|(\\d[\\d.]*\\s*[MG]B[^\\dA-Za-z]+|[:：]\\s*)\\d[\\d.]*\\s*GB(?!\\dA-Za-z))"
 
   custom_proxy_group:
-    - name: 'SELECT'
+    - name: "SELECT"
       type: select
       rule: [".*"]
-    - name: 'AD & Privacy'
+    - name: "AD & Privacy"
       type: select
       rule: ["[]REJECT", "[]PASS"]
-    - name: 'EDNS'
+    - name: "EDNS"
       type: select
       rule: ["[]REJECT", "[]PASS"]
-    - name: 'Apple'
+    - name: "PCDN"
+      type: select
+      rule: ["[]REJECT", "[]PASS"]
+    - name: "Apple"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: 'Microsoft'
+    - name: "Microsoft"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: 'Google'
+    - name: "Google"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: 'FINAL'
+    - name: "FINAL"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-
+    - name: "AUTO"
+      type: url-test
+      rule: [".*"]
+      url: "http://www.gstatic.com/generate_204"
+      interval: 600
+      tolerance: 30
+      timeout: 1
+      
   rulesets:
-    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/main/Source/Addition/Anti-Anti-Fraud.yaml"
+    - rule: "RULE-SET,applicationdesktop"
+      group: DIRECT
+    - rule: "RULE-SET,antiantifraud"
       group: REJECT
-      interval: 86400
-    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/release/Fuck-You-MIUI-Fhosts.yaml"
-      group: 'AD & Privacy'
-      interval: 86400
-    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/release/Fuck-You-MIUI-MIhosts.yaml"
-      group: 'AD & Privacy'
-      interval: 86400
-    - ruleset: "clash-domain:https://anti-ad.net/clash.yaml"
-      group: 'AD & Privacy'
-      interval: 86400
-    - rule: "GEOSITE,category-ads-all"
-      group: 'AD & Privacy'
-    - ruleset: "clash-classic:https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/release/anti-AD-EDNS.yaml"
-      group: EDNS
-      interval: 86400
-    - rule: "GEOSITE,apple"
-      group: Apple
-    - rule: "GEOSITE,microsoft"
-      group: Microsoft
-    - rule: "GEOSITE,google"
-      group: Google
+    - rule: "RULE-SET,fuck-you-miui-fhosts"
+      group: "AD & Privacy"
+    - rule: "RULE-SET,fuck-you-miui-mihosts"
+      group: "AD & Privacy"
+    - rule: "RULE-SET,anti-ad"
+      group: "AD & Privacy"
+    # - rule: "RULE-SET,stevenblack"
+    #   group: "AD & Privacy"
+    - rule: "RULE-SET,anti-ad-edns"
+      group: "EDNS"
+    - rule: "RULE-SET,antipcdn"
+      group: "PCDN"
+    # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
+    # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
     - rule: "GEOSITE,category-games@cn"
       group: DIRECT
+    - rule: "GEOSITE,microsoft"
+      group: Microsoft
+    - rule: "GEOSITE,apple"
+      group: Apple
+    # https://www.yetpage.com/archives/278
+    - rule: "GEOSITE,google"
+      group: Google
     - rule: "GEOSITE,private"
       group: DIRECT
-    - rule: "GEOIP,private,no-resolve"
+    - rule: "GEOSITE,cn"
       group: DIRECT
-    - rule: "GEOSITE,CN"
+    - rule: "GEOSITE,!cn"
+      group: SELECT
+    - rule: "GEOIP,private"
       group: DIRECT
-    - rule: "GEOIP,CN,no-resolve"
+    - rule: "GEOIP,cn"
       group: DIRECT
+    - rule: "GEOIP,!cn"
+      group: SELECT
     - rule: "MATCH"
       group: FINAL
 
