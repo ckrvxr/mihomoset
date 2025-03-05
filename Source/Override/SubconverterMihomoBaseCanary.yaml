@@ -115,8 +115,11 @@ geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 12
 geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+
 
 rule-providers:
   applicationdesktop:
@@ -124,48 +127,47 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
   antiantifraud:
     type: http
     behavior: classical
     format: yaml
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiAntiFraud.yaml"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiAntiFraud.yaml"
   fuck-you-miui-fhosts:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs"
   fuck-you-miui-mihosts:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs"
   anti-ad:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
+    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
   # stevenblack:
   #   type: http
   #   behavior: domain
   #   format: mrs
   #   interval: 43200
-  #   url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  #   url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
   anti-ad-edns:
     type: http
     behavior: classical
     format: yaml
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.yaml"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.yaml"
   antipcdn:
     type: http
     behavior: classical
     format: yaml
     interval: 43200
-    # url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
-    url: "https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/main/Source/Addition/AntiPCDN.yaml"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
   
