@@ -166,5 +166,6 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
+    # url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
+    url: "https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/main/Source/Addition/AntiPCDN.yaml"
   
