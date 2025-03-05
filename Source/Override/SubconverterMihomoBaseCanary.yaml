@@ -34,8 +34,8 @@ dns:
       - "https://dns.alidns.com/dns-query"
       - "https://doh.pub/dns-query"
     "geosite:!cn":
-      - "https://8.8.8.8/dns-query"
-      - "https://1.1.1.1/dns-query"
+      - "https://dns.google/dns-query"
+      - "https://cloudflare-dns.com/dns-query"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
