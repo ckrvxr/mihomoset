@@ -1,98 +1,98 @@
 custom:
-  enable_rule_generator: true
-  overwrite_original_rules: true
+  # enable_rule_generator: true
+  # overwrite_original_rules: true
   clash_rule_base: "https://raw.githubusercontent.com/Ckrvxr/MihomoRules/refs/heads/main/Source/Override/SubconverterMihomoBaseCanary.yaml"
   
   exclude_remarks:
     - "(Official|官网|官網|Data Left|Remain|剩余|剩餘|Traffic|流量|Expire|Expiry|到期|过期|過期|效期|Time|时间|時間|Reset|重置|分割线|(\\d[\\d.]*\\s*[MG]B[^\\dA-Za-z]+|[:：]\\s*)\\d[\\d.]*\\s*GB(?!\\dA-Za-z))"
 
-  custom_proxy_group:
-    - name: "SELECT"
-      type: select
-      rule: [".*"]
-    - name: "AD & Privacy"
-      type: select
-      rule: ["[]REJECT", "[]PASS"]
-    - name: "EDNS"
-      type: select
-      rule: ["[]REJECT", "[]PASS"]
-    - name: "PCDN"
-      type: select
-      rule: ["[]REJECT", "[]PASS"]
-    - name: "Apple"
-      type: select
-      rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: "Microsoft"
-      type: select
-      rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: "Google"
-      type: select
-      rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: "FINAL"
-      type: select
-      rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: "AUTO"
-      type: url-test
-      rule: [".*"]
-      url: "http://www.gstatic.com/generate_204"
-      interval: 600
-      tolerance: 30
-      timeout: 1
+  # custom_proxy_group:
+  #   - name: "SELECT"
+  #     type: select
+  #     rule: [".*"]
+  #   - name: "AD & Privacy"
+  #     type: select
+  #     rule: ["[]REJECT", "[]PASS"]
+  #   - name: "EDNS"
+  #     type: select
+  #     rule: ["[]REJECT", "[]PASS"]
+  #   - name: "PCDN"
+  #     type: select
+  #     rule: ["[]REJECT", "[]PASS"]
+  #   - name: "Apple"
+  #     type: select
+  #     rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
+  #   - name: "Microsoft"
+  #     type: select
+  #     rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
+  #   - name: "Google"
+  #     type: select
+  #     rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
+  #   - name: "FINAL"
+  #     type: select
+  #     rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
+  #   - name: "AUTO"
+  #     type: url-test
+  #     rule: [".*"]
+  #     url: "http://www.gstatic.com/generate_204"
+  #     interval: 600
+  #     tolerance: 30
+  #     timeout: 1
       
-  rulesets:
-    - rule: "DOMAIN-SUFFIX,dns.alidns.com"
-      group: DIRECT
-    - rule: "DOMAIN-SUFFIX,doh.pub"
-      group: DIRECT
-    - rule: "IP-CIDR,8.8.8.8/32,no-resolve"
-      group: "AUTO"
-    - rule: "IP-CIDR,8.4.4.8/32,no-resolve"
-      group: "AUTO"
-    - rule: "IP-CIDR,1.1.1.1/32,no-resolve"
-      group: "AUTO"
-    - rule: "IP-CIDR,1.0.0.1/32,no-resolve"
-      group: "AUTO"
-    - rule: "RULE-SET,applicationdesktop"
-      group: DIRECT
-    - rule: "RULE-SET,antiantifraud"
-      group: REJECT
-    - rule: "RULE-SET,fuck-you-miui-fhosts"
-      group: "AD & Privacy"
-    - rule: "RULE-SET,fuck-you-miui-mihosts"
-      group: "AD & Privacy"
-    - rule: "RULE-SET,anti-ad"
-      group: "AD & Privacy"
-    # - rule: "RULE-SET,stevenblack"
-    #   group: "AD & Privacy"
-    - rule: "RULE-SET,anti-ad-edns"
-      group: "EDNS"
-    - rule: "RULE-SET,antipcdn"
-      group: "PCDN"
-    - rule: "GEOSITE,category-games@cn"
-      group: DIRECT
-    - rule: "GEOSITE,apple"
-      group: Apple
-    - rule: "GEOSITE,microsoft"
-      group: Microsoft
-    # https://www.yetpage.com/archives/278
-    - rule: "GEOSITE,google"
-      group: Google
-    # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
-    # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
-    - rule: "GEOSITE,private"
-      group: DIRECT
-    - rule: "GEOSITE,cn"
-      group: DIRECT
-    - rule: "GEOSITE,!cn"
-      group: SELECT
-    - rule: "GEOIP,private"
-      group: DIRECT
-    - rule: "GEOIP,cn"
-      group: DIRECT
-    - rule: "GEOIP,!cn"
-      group: SELECT
-    - rule: "MATCH"
-      group: FINAL
+  # rulesets:
+  #   - rule: "DOMAIN-SUFFIX,dns.alidns.com"
+  #     group: DIRECT
+  #   - rule: "DOMAIN-SUFFIX,doh.pub"
+  #     group: DIRECT
+  #   - rule: "IP-CIDR,8.8.8.8/32,no-resolve"
+  #     group: "AUTO"
+  #   - rule: "IP-CIDR,8.4.4.8/32,no-resolve"
+  #     group: "AUTO"
+  #   - rule: "IP-CIDR,1.1.1.1/32,no-resolve"
+  #     group: "AUTO"
+  #   - rule: "IP-CIDR,1.0.0.1/32,no-resolve"
+  #     group: "AUTO"
+  #   - rule: "RULE-SET,applicationdesktop"
+  #     group: DIRECT
+  #   - rule: "RULE-SET,antiantifraud"
+  #     group: REJECT
+  #   - rule: "RULE-SET,fuck-you-miui-fhosts"
+  #     group: "AD & Privacy"
+  #   - rule: "RULE-SET,fuck-you-miui-mihosts"
+  #     group: "AD & Privacy"
+  #   - rule: "RULE-SET,anti-ad"
+  #     group: "AD & Privacy"
+  #   # - rule: "RULE-SET,stevenblack"
+  #   #   group: "AD & Privacy"
+  #   - rule: "RULE-SET,anti-ad-edns"
+  #     group: "EDNS"
+  #   - rule: "RULE-SET,antipcdn"
+  #     group: "PCDN"
+  #   - rule: "GEOSITE,category-games@cn"
+  #     group: DIRECT
+  #   - rule: "GEOSITE,apple"
+  #     group: Apple
+  #   - rule: "GEOSITE,microsoft"
+  #     group: Microsoft
+  #   # https://www.yetpage.com/archives/278
+  #   - rule: "GEOSITE,google"
+  #     group: Google
+  #   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
+  #   # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
+  #   - rule: "GEOSITE,private"
+  #     group: DIRECT
+  #   - rule: "GEOSITE,cn"
+  #     group: DIRECT
+  #   - rule: "GEOSITE,!cn"
+  #     group: SELECT
+  #   - rule: "GEOIP,private"
+  #     group: DIRECT
+  #   - rule: "GEOIP,cn"
+  #     group: DIRECT
+  #   - rule: "GEOIP,!cn"
+  #     group: SELECT
+  #   - rule: "MATCH"
+  #     group: FINAL
 
   add_emoji: true
   remove_old_emoji: false
