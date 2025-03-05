@@ -31,11 +31,11 @@ dns:
     - "https://doh.pub/dns-query"
   nameserver-policy:
     "geosite:private,cn":
-      - "https://dns.alidns.com/dns-query"
-      - "https://doh.pub/dns-query"
+      - "https://dns.alidns.com/dns-query#$DIRECT"
+      - "https://doh.pub/dns-query#$DIRECT"
     "geosite:!cn":
-      - "https://dns.google/dns-query"
-      - "https://cloudflare-dns.com/dns-query"
+      - "https://dns.google/dns-query#$AUTO"
+      - "https://cloudflare-dns.com/dns-query#$AUTO"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
