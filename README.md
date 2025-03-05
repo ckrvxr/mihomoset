@@ -21,11 +21,12 @@ Below is a table of the main functions included in the MihomoParty override pack
 
 | Function Name          | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
+| AntiAntiFraud          | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute to creating a world without fraud. |
+| Fuck-You-MIUI          | Strongly blocks MIUI telemetry.                                             |
 | applicationdesktop     | Prevents proxy tools and P2P download software from using the proxy.        |
 | anti-AD                | Blocks China ads and telemetry.                                          |
-| StevenBlack           | Blocks global ads, telemetry, and malicious websites.                       |
 | anti-AD-EDNS           | Blocks encrypted DNS used for loading ads.                                  |
-| AntiPCDN               | Blocks P2P2 CDN to speed up streaming access.                               |
+| AntiPCDN               | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
 | category-games@cn      | Allows games that support china access to use direct connections to save bandwidth. |
 
 ### Option Two: Subconverter Subscription Conversion
