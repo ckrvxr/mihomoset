@@ -1,8 +1,8 @@
 log-level: warning
 
 mixed-port: 7890
-external-controller: '127.0.0.1:9090'
-secret: 'MihomoParty'
+external-controller: "127.0.0.1:9090"
+secret: "MihomoParty"
 
 mode: rule
 find-process-mode: strict
@@ -14,58 +14,84 @@ profile:
   store-fake-ip: true
   tracing: true
 
-# https://wiki.metacubex.one/config/dns/diagram/
-# According to the mihomo kernel documentation on DNS resolution processes,
-# proxy domains are resolved by remote hosts. When Chinese DNS service
-# providers make errors, the fallback DNS is also likely to be incorrect. 
-# Therefore, the chance of hitting the fallback is almost zero, so there 
-# is no need to configure fallback here.
 dns!:
   enable: true
-  listen: '127.0.0.1:53'
-  # cache-algorithm: arc
+  listen: "127.0.0.1:1053"
   ipv6: true
   prefer-h3: true
+  respect-rules: false
   default-nameserver:
-    - '223.5.5.5'
-    - '119.29.29.29'
+    - "223.5.5.5"
+    - "119.29.29.29"
+  proxy-server-nameserver:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
   nameserver:
-    - 'https://dns.alidns.com/dns-query'
-    - 'https://doh.pub/dns-query'
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  nameserver-policy:
+    "geosite:private,cn":
+      - "https://dns.alidns.com/dns-query"
+      - "https://doh.pub/dns-query"
+    "geosite:!cn":
+      - "https://dns.google/dns-query#AUTO"
+      - "https://cloudflare-dns.com/dns-query#AUTO"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
-  fake-ip-range: '198.18.0.1/16'
+  fake-ip-range: "198.18.0.1/16"
   fake-ip-filter:
     # ========= LAN =========
-    - '192.168.0.0/16'
-    - '172.16.0.0/12'
-    - '10.0.0.0/8'
-    - '*.local'
-    - '*.localdomain'
-    - '*.localhost'
-    - '*.lan'
-    - '*.home.arpa'
-    - '*.test'
-    - '*.example'
-    - '*.invalid'
+    - "192.168.0.0/16"
+    - "172.16.0.0/12"
+    - "10.0.0.0/8"
+    - "+.local"
+    - "+.localdomain"
+    - "+.localhost"
+    - "+.lan"
+    - "+.home.arpa"
+    - "+.test"
+    - "+.example"
+    - "+.invalid"
     # ========= NTP =========
-    - '+.ntp.*.com'
-    - '+.ntp.org'
-    - '+.time.com'
-    - '+.time.*.com'
-    - '+.time.*.*.com'
+    - "+.ntp.*.com"
+    - "+.ntp.org"
+    - "+.time.com"
+    - "+.time.*.com"
+    - "+.time.*.*.com"
     # ======== STUN =========
-    - '+.stun.*'
-    - '+.stun.*.*'
-    - '+.stun.*.*.*'
-    - '+.stun.*.*.*.*'
-    - '+.stun.*.*.*.*.*'
+    - "+.stun.*"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "+.stun.*.*.*.*.*"
     # == Win Connnect Test ==
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.ipv6.microsoft.com"
+    # ======== Xbox =========
+    - "+.xboxlive.com"
+    - "xbox.*.microsoft.com"
+    - "xbox.*.*.microsoft.com"
+    # ======== MiJia ========
+    - "Mijia Cloud"
+    - "+.mijia.tech"
     # ======== Other ========
-    - 'mtalk.google.com'
-
+    - "mtalk.google.com"
+    - "+.srv.nintendo.net"
+    - "+.mcdn.bilivideo.cn"
+    # - "localhost.ptlogin2.qq.com"
+    
+tun!:
+  enable: true
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+  dns-hijack:
+    - udp://any:53
+    - tcp://any:53
+  mtu: 9000
+  
 sniffer!:
     enable: true
     parse-pure-ip: true
@@ -81,129 +107,168 @@ sniffer!:
         override-destination: true
     skip-domain:
       - "Mijia Cloud"
+      - "+.mijia.tech"
       - "+.push.apple.com"
-
-rule-providers:
-  applications:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
-  anti-ad:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
-  stevenblack:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    url: "https://testingcf.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
 
 geodata-mode: true
 geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 12
 geox-url:
-  geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
-  geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+
+rule-providers:
+  applicationdesktop:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+  antiantifraud:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiAntiFraud.yaml"
+  fuck-you-miui-fhosts:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs"
+  fuck-you-miui-mihosts:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs" 
+  anti-ad:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
+  stevenblack:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  anti-ad-edns:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.yaml"
+  antipcdn:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
 
 proxy-groups:
-  - name: 'SELECT'
-    icon: 'https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png'
+  - name: "SELECT"
+    icon: "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png"
     type: select
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置
-    # proxies:
-    #   - 'AUTO'
-    url: 'http://www.gstatic.com/generate_204'
-  # - name: 'AUTO'
-  #   icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png'
-  #   type: url-test
-  #   include-all: true
-  #   exclude-filter: (?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置
-  #   url: 'http://www.gstatic.com/generate_204'
-  #   interval: 1800
-  #   tolerance: 50
-  # - name: 'FALLBACK'
-  #   icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png'
-  #   type: fallback
-  #   include-all: true
-  #   exclude-filter: (?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置
-  #   url: 'http://www.gstatic.com/generate_204'
-  #   interval: 1800
-  - name: 'AD & Privacy'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png'
+    exclude-filter: "(?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "AD & Privacy"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png"
     type: select
     proxies:
-      - 'REJECT'
-      - 'PASS'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'Microsoft'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png'
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "EDNS"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Lock.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.msftconnecttest.com/connecttest.txt'
-  - name: 'Apple'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png'
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "PCDN"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Server.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://captive.apple.com'
-  # https://www.yetpage.com/archives/278
-  - name: 'Google'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png'
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "Microsoft"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'FINAL'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.msftconnecttest.com/connecttest.txt"
+  - name: "Apple"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.gstatic.com/generate_204'
-  - name: 'GLOBAL'
-    icon: 'https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://captive.apple.com"
+  - name: "Google"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png"
     type: select
     proxies:
-      - 'SELECT'
-      - 'DIRECT'
-      - 'REJECT'
-    url: 'http://www.gstatic.com/generate_204'
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "FINAL"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png"
+    type: select
+    proxies:
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "GLOBAL"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png"
+    type: select
+    proxies:
+      - "SELECT"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "AUTO"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png"
+    type: url-test
+    include-all: true
+    exclude-filter: "(?i)GB|Traffic|Expire|Premium|官网|频道|订阅|ISP|流量|到期|重置"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 600
+    tolerance: 30
+    timeout: 1
+    hidden: true
 
 rules:
-  - 'RULE-SET,applications,DIRECT'
-
-  - 'RULE-SET,anti-ad,AD & Privacy'
-  - 'RULE-SET,stevenblack,AD & Privacy'
-  # - 'GEOSITE,category-ads-all,AD & Privacy'
-  # - 'GEOSITE,win-spy,AD & Privacy'
-
-  - 'GEOSITE,microsoft,Microsoft'
-  - 'GEOSITE,apple,Apple'
-  - 'GEOSITE,google,Google'
-
+  - "RULE-SET,applicationdesktop,DIRECT"
+  - "RULE-SET,antiantifraud,AD & Privacy"
+  - "RULE-SET,fuck-you-miui-fhosts,AD & Privacy"
+  - "RULE-SET,fuck-you-miui-mihosts,AD & Privacy"
+  - "RULE-SET,anti-ad,AD & Privacy"
+  - "RULE-SET,stevenblack,AD & Privacy"
+  - "RULE-SET,anti-ad-edns,EDNS"
+  - "RULE-SET,antipcdn,PCDN"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
   # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
-  - 'GEOSITE,category-games@cn,DIRECT'
-
-  - 'GEOSITE,private,DIRECT'
-  - 'GEOIP,private,DIRECT,no-resolve'
-
-  - 'GEOSITE,cn,DIRECT'
-  - 'GEOIP,cn,DIRECT,no-resolve'
-
-  - 'MATCH,FINAL'
+  - "GEOSITE,category-games@cn,DIRECT"
+  - "GEOSITE,microsoft,Microsoft"
+  - "GEOSITE,apple,Apple"
+  # https://www.yetpage.com/archives/278
+  - "GEOSITE,google,Google"
+  - "GEOSITE,private,DIRECT"
+  - "GEOSITE,cn,DIRECT"
+  - "GEOSITE,!cn,SELECT"
+  - "GEOIP,private,DIRECT"
+  - "GEOIP,cn,DIRECT"
+  - "GEOIP,!cn,SELECT"
+  - "MATCH,FINAL"
