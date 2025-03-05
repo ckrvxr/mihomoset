@@ -24,11 +24,15 @@ dns:
     - "223.5.5.5"
     - "119.29.29.29"
   nameserver:
-    - "https://dns.alidns.com/#DIRECT"
+    - "https://dns.alidns.com/dns-query#DIRECT"
     - "https://doh.pub/dns-query#DIRECT"
+    - "tls://223.5.5.5"
+    - "tls://1.12.12.12"
   fallback:
     - "https://dns.google/dns-query#AUTO"
     - "https://cloudflare-dns.com/dns-query#AUTO"
+    - "tls://8.8.8.8"
+    - "tls://1.1.1.1"
   fallback-filter:
     geoip: true
     geoip-code: cn
