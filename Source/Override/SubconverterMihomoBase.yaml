@@ -1,8 +1,8 @@
 log-level: warning
 
 mixed-port: 7890
-external-controller: 127.0.0.1:9090
-secret: 'SubconverterMihomo'
+external-controller: "127.0.0.1:9090"
+secret: "SubconverterMihomo"
 
 mode: rule
 find-process-mode: strict
@@ -16,60 +16,82 @@ profile:
 
 dns:
   enable: true
-  listen: 127.0.0.1:53
+  listen: "127.0.0.1:1053"
   ipv6: true
   prefer-h3: true
+  respect-rules: false
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - "223.5.5.5"
+    - "119.29.29.29"
+  proxy-server-nameserver:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  nameserver-policy:
+    "geosite:private,cn":
+      - "https://dns.alidns.com/dns-query"
+      - "https://doh.pub/dns-query"
+    "geosite:!cn":
+      - "https://dns.google/dns-query#AUTO"
+      - "https://cloudflare-dns.com/dns-query#AUTO"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
-  fake-ip-range: 198.18.0.1/16
+  fake-ip-range: "198.18.0.1/16"
   fake-ip-filter:
     # ========= LAN =========
-    - '192.168.0.0/16'
-    - '172.16.0.0/12'
-    - '10.0.0.0/8'
-    - '*.local'
-    - '*.localdomain'
-    - '*.localhost'
-    - '*.lan'
-    - '*.home.arpa'
-    - '*.test'
-    - '*.example'
-    - '*.invalid'
+    - "192.168.0.0/16"
+    - "172.16.0.0/12"
+    - "10.0.0.0/8"
+    - "+.local"
+    - "+.localdomain"
+    - "+.localhost"
+    - "+.lan"
+    - "+.home.arpa"
+    - "+.test"
+    - "+.example"
+    - "+.invalid"
     # ========= NTP =========
-    - '+.ntp.*.com'
-    - '+.ntp.org'
-    - '+.time.com'
-    - '+.time.*.com'
-    - '+.time.*.*.com'
+    - "+.ntp.*.com"
+    - "+.ntp.org"
+    - "+.time.com"
+    - "+.time.*.com"
+    - "+.time.*.*.com"
     # ======== STUN =========
-    - '+.stun.*'
-    - '+.stun.*.*'
-    - '+.stun.*.*.*'
-    - '+.stun.*.*.*.*'
-    - '+.stun.*.*.*.*.*'
+    - "+.stun.*"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "+.stun.*.*.*.*.*"
     # == Win Connnect Test ==
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
-    - '+.ipv6.microsoft.com'
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.ipv6.microsoft.com"
     # ======== Xbox =========
-    - '+.xboxlive.com'
-    - 'xbox.*.microsoft.com'
-    - 'xbox.*.*.microsoft.com'
+    - "+.xboxlive.com"
+    - "xbox.*.microsoft.com"
+    - "xbox.*.*.microsoft.com"
     # ======== MiJia ========
-    - 'Mijia Cloud'
-    - '+.mijia.tech'
+    - "Mijia Cloud"
+    - "+.mijia.tech"
     # ======== Other ========
-    - 'mtalk.google.com'
-    - '+.srv.nintendo.net'
+    - "mtalk.google.com"
+    - "+.srv.nintendo.net"
     - "+.mcdn.bilivideo.cn"
-    # - 'localhost.ptlogin2.qq.com'
+    # - "localhost.ptlogin2.qq.com"
 
+tun:
+  enable: true
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+  dns-hijack:
+    - udp://any:53
+    - tcp://any:53
+  mtu: 9000
+  
 sniffer:
   enable: true
   parse-pure-ip: true
@@ -85,13 +107,66 @@ sniffer:
       override-destination: true
   skip-domain:
     - "Mijia Cloud"
-    - '+.mijia.tech'
+    - "+.mijia.tech"
     - "+.push.apple.com"
-
+  
 geodata-mode: true
 geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 12
 geox-url:
-  geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
-  geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+
+
+rule-providers:
+  applicationdesktop:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+  antiantifraud:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiAntiFraud.yaml"
+  fuck-you-miui-fhosts:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs"
+  fuck-you-miui-mihosts:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs"
+  anti-ad:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
+  # stevenblack:
+  #   type: http
+  #   behavior: domain
+  #   format: mrs
+  #   interval: 43200
+  #   url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  anti-ad-edns:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/anti-AD-EDNS.yaml"
+  antipcdn:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
