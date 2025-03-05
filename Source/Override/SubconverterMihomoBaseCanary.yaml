@@ -31,9 +31,10 @@ dns:
     - "https://cloudflare-dns.com/dns-query#AUTO"
   fallback-filter:
     geoip: true
-    geoip-code: CN
+    geoip-code: cn
     geosite:
-      - gfw
+      - "gfw"
+      - "!cn"
     ipcidr:
       - ＂240.0.0.0/4＂
       - ＂0.0.0.0/32＂
