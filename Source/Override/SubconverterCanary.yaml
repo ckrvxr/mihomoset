@@ -37,7 +37,6 @@ custom:
       url: "http://www.gstatic.com/generate_204"
       interval: 600
       tolerance: 30
-      timeout: 1
       
   rulesets:
     - rule: "RULE-SET,applicationdesktop"
