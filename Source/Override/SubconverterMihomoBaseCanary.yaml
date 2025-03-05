@@ -21,21 +21,21 @@ dns:
   prefer-h3: true
   respect-rules: true
   default-nameserver:
-    - "223.5.5.5#DIRECT"
-    - "119.29.29.29#DIRECT"
+    - "223.5.5.5"
+    - "119.29.29.29"
   proxy-server-nameserver:
-    - "https://dns.alidns.com/dns-query#DIRECT"
-    - "https://doh.pub/dns-query#DIRECT"
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
   nameserver:
-    - "https://dns.alidns.com/dns-query#DIRECT"
-    - "https://doh.pub/dns-query#DIRECT"
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
   nameserver-policy:
     "geosite:private,cn":
-      - "https://dns.alidns.com/dns-query#DIRECT"
-      - "https://doh.pub/dns-query#DIRECT"
+      - "https://dns.alidns.com/dns-query"
+      - "https://doh.pub/dns-query"
     "geosite:!cn":
-      - "https://dns.google/dns-query#AUTO"
-      - "https://cloudflare-dns.com/dns-query#AUTO"
+      - "https://dns.google/dns-query"
+      - "https://cloudflare-dns.com/dns-query"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
