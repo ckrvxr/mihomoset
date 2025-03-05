@@ -22,20 +22,29 @@ dns!:
   respect-rules: false
   default-nameserver:
     - "223.5.5.5"
-    - "119.29.29.29"
+    - "1.12.12.12"
   proxy-server-nameserver:
-    - "https://dns.alidns.com/dns-query"
-    - "https://doh.pub/dns-query"
+    - "https://dns.alidns.com/dns-query#DIRECT"
+    - "https://doh.pub/dns-query#DIRECT"
+    - "https://dns.google/dns-query#DIRECT"
+    - "https://cloudflare-dns.com/dns-query#DIRECT"
   nameserver:
-    - "https://dns.alidns.com/dns-query"
-    - "https://doh.pub/dns-query"
-  nameserver-policy:
-    "geosite:private,cn":
-      - "https://dns.alidns.com/dns-query"
-      - "https://doh.pub/dns-query"
-    "geosite:!cn":
-      - "https://dns.google/dns-query#AUTO"
-      - "https://cloudflare-dns.com/dns-query#AUTO"
+    - "https://dns.alidns.com/dns-query#DIRECT"
+    - "https://doh.pub/dns-query#DIRECT"
+  fallback:
+    - "https://dns.google/dns-query#AUTO"
+    - "https://cloudflare-dns.com/dns-query#AUTO"
+  fallback-filter:
+    geoip: true
+    geoip-code: cn
+    geosite:
+      - "gfw"
+    ipcidr:
+      - "240.0.0.0/4"
+      - "0.0.0.0/32"
+      - "127.0.0.1/32"
+    domain:
+      - "+.google.cn"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
@@ -80,7 +89,7 @@ dns!:
     - "+.srv.nintendo.net"
     - "+.mcdn.bilivideo.cn"
     # - "localhost.ptlogin2.qq.com"
-    
+
 tun!:
   enable: true
   auto-route: true
