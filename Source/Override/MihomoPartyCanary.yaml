@@ -34,8 +34,8 @@ dns!:
       - "https://dns.alidns.com/dns-query"
       - "https://doh.pub/dns-query"
     "geosite:!cn":
-      - "https://8.8.8.8/dns-query"
-      - "https://1.1.1.1/dns-query"
+      - "https://dns.google/dns-query"
+      - "https://cloudflare-dns.com/dns-query"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
@@ -252,10 +252,8 @@ proxy-groups:
 rules:
   - "DOMAIN-SUFFIX,dns.alidns.com,DIRECT"
   - "DOMAIN-SUFFIX,doh.pub,DIRECT"
-  - "IP-CIDR,8.8.8.8/32,AUTO,no-resolve"
-  - "IP-CIDR,8.4.4.8/32,AUTO,no-resolve"
-  - "IP-CIDR,1.1.1.1/32,AUTO,no-resolve"
-  - "IP-CIDR,1.0.0.1/32,AUTO,no-resolve"
+  - "DOMAIN-SUFFIX,dns.google,AUTO"
+  - "DOMAIN-SUFFIX,cloudflare-dns.com,AUTO"
   - "RULE-SET,applicationdesktop,DIRECT"
   - "RULE-SET,antiantifraud,AD & Privacy"
   - "RULE-SET,fuck-you-miui-fhosts,AD & Privacy"
