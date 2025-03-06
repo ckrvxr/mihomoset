@@ -22,20 +22,13 @@ dns!:
   respect-rules: false
   default-nameserver:
     - "223.5.5.5"
-    - "119.29.29.29"
-  proxy-server-nameserver:
-    - "https://dns.alidns.com/dns-query"
-    - "https://doh.pub/dns-query"
+    - "1.12.12.12"
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
   nameserver-policy:
-    "geosite:private,cn":
-      - "https://dns.alidns.com/dns-query"
-      - "https://doh.pub/dns-query"
-    "geosite:!cn":
-      - "https://dns.google/dns-query#AUTO"
-      - "https://cloudflare-dns.com/dns-query#AUTO"
+    "geosite:private":
+      - "system"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: "198.18.0.1/16"
@@ -145,18 +138,24 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs" 
-  anti-ad:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
   stevenblack:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  adrules:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/AdRules.mrs"
+  anti-ad:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
   anti-ad-edns:
     type: http
     behavior: classical
@@ -254,8 +253,9 @@ rules:
   - "RULE-SET,antiantifraud,AD & Privacy"
   - "RULE-SET,fuck-you-miui-fhosts,AD & Privacy"
   - "RULE-SET,fuck-you-miui-mihosts,AD & Privacy"
-  - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,stevenblack,AD & Privacy"
+  - "RULE-SET,adrules,AD & Privacy"
+  - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,anti-ad-edns,EDNS"
   - "RULE-SET,antipcdn,PCDN"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
