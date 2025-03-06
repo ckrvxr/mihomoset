@@ -73,7 +73,7 @@ dns!:
     - "+.srv.nintendo.net"
     - "+.mcdn.bilivideo.cn"
     # - "localhost.ptlogin2.qq.com"
-
+    
 tun!:
   enable: true
   auto-route: true
@@ -138,18 +138,24 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs" 
-  anti-ad:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
   stevenblack:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  adrules:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/AdRules.mrs"
+  anti-ad:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
   anti-ad-edns:
     type: http
     behavior: classical
@@ -237,8 +243,9 @@ rules:
   - "RULE-SET,antiantifraud,AD & Privacy"
   - "RULE-SET,fuck-you-miui-fhosts,AD & Privacy"
   - "RULE-SET,fuck-you-miui-mihosts,AD & Privacy"
-  - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,stevenblack,AD & Privacy"
+  - "RULE-SET,adrules,AD & Privacy"
+  - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,anti-ad-edns,EDNS"
   - "RULE-SET,antipcdn,PCDN"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
