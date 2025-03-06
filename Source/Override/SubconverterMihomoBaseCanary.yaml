@@ -142,9 +142,9 @@ rule-providers:
   adrules:
     type: http
     behavior: domain
-    format: text
+    format: mrs
     interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules_domainset.txt"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/.AdRules.mrs"
   anti-ad:
     type: http
     behavior: domain
