@@ -17,7 +17,11 @@ payload:
   - DOMAIN-SUFFIX,stun1.douyucdn.cn
   - DOMAIN-SUFFIX,mcdn.bilivideo.cn
   - DOMAIN-SUFFIX,tpa-hcdn.iqiyi.com
-  - DOMAIN-REGEX,.*pcdn.*biliapi.net
-  - DOMAIN-REGEX,.*pcdn.*youku.com
-  - DOMAIN-REGEX,.*p2p.*douyucdn.cn 
-  - DOMAIN-REGEX,.*p2p.*qq.com
+  - AND,((DOMAIN-KEYWORD,pcdn),(DOMAIN-SUFFIX,biliapi.net))
+  - AND,((DOMAIN-KEYWORD,pcdn),(DOMAIN-SUFFIX,youku.com))
+  - AND,((DOMAIN-KEYWORD,p2p),(DOMAIN-SUFFIX,douyucdn.cn))
+  - AND,((DOMAIN-KEYWORD,p2p),(DOMAIN-SUFFIX,qq.com))
+  # - DOMAIN-REGEX,.*pcdn.*biliapi.net
+  # - DOMAIN-REGEX,.*pcdn.*youku.com
+  # - DOMAIN-REGEX,.*p2p.*douyucdn.cn 
+  # - DOMAIN-REGEX,.*p2p.*qq.com
