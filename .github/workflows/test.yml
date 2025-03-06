@@ -37,9 +37,12 @@ jobs:
         fi
     - name: Download text file for AdRules
       run: curl -o AdRules.txt https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt
+      
+    - name: Convert text to Mihomo rules yaml (Domain) for AdRules
+      run: python3 Source/Script/TextToYAML.py AdRules.txt AdRules.yaml  
 
     - name: Compile to Mihomo rules binary for AdRules
-      run: mihomo convert-ruleset domain text AdRules.txt AdRules.mrs
+      run: mihomo convert-ruleset domain yaml AdRules.yaml AdRules.mrs
     
     - name: Download yaml file for anti-AD
       run: curl -o anti-AD.yaml https://anti-ad.net/clash.yaml
