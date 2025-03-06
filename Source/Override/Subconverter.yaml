@@ -31,12 +31,6 @@ custom:
     - name: "FINAL"
       type: select
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
-    - name: "AUTO"
-      type: url-test
-      rule: [".*"]
-      url: "http://www.gstatic.com/generate_204"
-      interval: 600
-      tolerance: 30
       
   rulesets:
     - rule: "RULE-SET,applicationdesktop"
