@@ -139,6 +139,12 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs"
+  # stevenblack:
+  #   type: http
+  #   behavior: domain
+  #   format: mrs
+  #   interval: 43200
+  #   url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
   adrules:
     type: http
     behavior: domain
@@ -151,12 +157,6 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
-  # stevenblack:
-  #   type: http
-  #   behavior: domain
-  #   format: mrs
-  #   interval: 43200
-  #   url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
   anti-ad-edns:
     type: http
     behavior: classical
