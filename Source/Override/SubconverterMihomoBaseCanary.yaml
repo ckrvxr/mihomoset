@@ -144,7 +144,7 @@ rule-providers:
     behavior: domain
     format: mrs
     interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/.AdRules.mrs"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/AdRules.mrs"
   anti-ad:
     type: http
     behavior: domain
