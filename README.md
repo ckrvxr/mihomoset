@@ -42,7 +42,7 @@ https://api.sublink.dev/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/ref
 | config    | ✔️        | http://....Subconverter.yaml | Rule template address |
 | target    | ✔️        | clash         | Output format        |
 | udp       |          | true          | Enable UDP forwarding |
-| url       | ✔️        | Your subscription link | Original subscription address |
+| url       | ✔️        | https://xxx.com/subscribe/xxxx | Original subscription address |
 
 Below is a table of the main functions included in the Mihomo override package:
 
