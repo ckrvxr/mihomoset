@@ -35,7 +35,12 @@ jobs:
           echo "Fail due to unsupported mihomo architecture"
           exit 1
         fi
+    - name: Download text file for AdRules
+      run: curl -o AdRules.txt https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt
 
+    - name: Compile to Mihomo rules binary for AdRules
+      run: mihomo convert-ruleset domain text AdRules.txt AdRules.mrs
+    
     - name: Download yaml file for anti-AD
       run: curl -o anti-AD.yaml https://anti-ad.net/clash.yaml
 
