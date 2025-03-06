@@ -27,7 +27,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
   nameserver-policy:
-    "geosite: private":
+    "geosite:private":
       - "system"
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
