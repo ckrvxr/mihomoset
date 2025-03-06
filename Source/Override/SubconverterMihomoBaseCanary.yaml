@@ -139,6 +139,12 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs"
+  adrules:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules_domainset.txt"
   anti-ad:
     type: http
     behavior: domain
@@ -163,4 +169,3 @@ rule-providers:
     format: yaml
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiPCDN.yaml"
-
