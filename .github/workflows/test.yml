@@ -35,10 +35,11 @@ jobs:
           echo "Fail due to unsupported mihomo architecture"
           exit 1
         fi
+        
     - name: Download text file for AdRules
       run: curl -o AdRules.txt https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt
       
-    - name: Convert text to Mihomo rules yaml (Domain) for AdRules
+    - name: Convert text to Mihomo rules yaml for AdRules
       run: python3 Source/Script/TextToYAML.py AdRules.txt AdRules.yaml  
 
     - name: Compile to Mihomo rules binary for AdRules
