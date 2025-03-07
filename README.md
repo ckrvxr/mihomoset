@@ -5,12 +5,14 @@ MihomoRules is a rule library designed for [Mihomo](https://github.com/MetaCubeX
 ## 🎛️ Override Rule Configuration Guide
 
 ### Option One: MihomoParty Direct Installation
+
 ```yaml
 ▸ Configuration File: MihomoParty.yaml
-▸ Download Link:
-  https://github.com/Ckrvxr/MihomoRules/raw/main/Source/Override/MihomoParty.yaml
+▸ Download Link: https://github.com/Ckrvxr/MihomoRules/raw/main/Source/Override/MihomoParty.yaml
 ```
+
 **Steps**
+
 1. Download the configuration file.
 2. Open the MihomoParty panle.
 3. Go to the "Override Configuration" interface and upload the file.
@@ -19,44 +21,46 @@ MihomoRules is a rule library designed for [Mihomo](https://github.com/MetaCubeX
 
 Below is a table of the main functions included in the MihomoParty override package:
 
-| Function Name          | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| AntiAntiFraud          | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute to creating a world without fraud. |
-| Fuck-You-MIUI          | Strongly blocks MIUI telemetry.                                             |
-| applicationdesktop     | Prevents proxy tools and P2P download software from using the proxy.        |
-| StevenBlack           | Blocks global ads, telemetry, and malicious websites.                       |
-| AdRules | Blocks China ads and telemetry. |
-| anti-AD                | Blocks China ads and telemetry.                                          |
-| anti-AD-EDNS           | Blocks encrypted DNS used for loading ads.                                  |
-| AntiPCDN               | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
-| category-games@cn      | Allows games that support china access to use direct connections to save bandwidth. |
+| Function Name      | Description                                                                                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AntiAntiFraud      | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project.        |
+| Fuck-You-MIUI      | Strongly blocks MIUI telemetry.                                                                                                                                          |
+| applicationdesktop | Prevents proxy tools and P2P download software from using the proxy.                                                                                                     |
+| StevenBlack        | Blocks global ads, telemetry, and malicious websites.                                                                                                                    |
+| AdRules            | Blocks China ads and telemetry.                                                                                                                                          |
+| anti-AD            | Blocks China ads and telemetry.                                                                                                                                          |
+| anti-AD-EDNS       | Blocks encrypted DNS used for loading ads.                                                                                                                               |
+| AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
+| category-games@cn  | Allows games that support china access to use direct connections to save bandwidth.                                                                                      |
 
 ### Option Two: Subconverter Subscription Conversion
+
 ```bash
 # Subscription conversion template URL (copy and replace YOURURL field)
 https://api.sublink.dev/sub?config=https://github.com/Ckrvxr/MihomoRules/raw/refs/heads/main/Source/Override/Subconverter.yaml&target=clash&udp=true&url=YOURURL
 ```
+
 **Parameter Description Table**
 
-| Parameter | Required | Example Value | Function Description |
-|-----------|----------|---------------|----------------------|
-| config    | ✔️        | http://....Subconverter.yaml | Rule template address |
-| target    | ✔️        | clash         | Output format        |
-| udp       |          | true          | Enable UDP forwarding |
-| url       | ✔️        | https://...com/subscribe/xxxx | Original subscription address |
+| Parameter | Required | Example Value                 | Function Description          |
+| --------- | -------- | ----------------------------- | ----------------------------- |
+| config    | ✔️       | http://....Subconverter.yaml  | Rule template address         |
+| target    | ✔️       | clash                         | Output format                 |
+| udp       |          | true                          | Enable UDP forwarding         |
+| url       | ✔️       | https://...com/subscribe/xxxx | Original subscription address |
 
 Below is a table of the main functions included in the Mihomo override package:
 
-| Function Name               | Description                                                                 |
-|----------------------------------------|-----------------------------------------------------------------------------|
-| AntiAntiFraud | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute to creating a world without fraud. |
-| Fuck-You-MIUI | Strongly blocks MIUI telemetry. |
-| applicationdesktop | Prevents proxy tools and P2P download software from using the proxy. |
-| AdRules | Blocks China ads and telemetry. |
-| anti-AD | Blocks China ads and telemetry. |
-| anti-AD-EDNS | Blocks encrypted DNS used for loading ads. |
-| AntiPCDN | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
-| category-games@cn | Allows games that support china access to use direct connections to save bandwidth. |
+| Function Name      | Description                                                                                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AntiAntiFraud      | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project.        |
+| Fuck-You-MIUI      | Strongly blocks MIUI telemetry.                                                                                                                                          |
+| applicationdesktop | Prevents proxy tools and P2P download software from using the proxy.                                                                                                     |
+| AdRules            | Blocks China ads and telemetry.                                                                                                                                          |
+| anti-AD            | Blocks China ads and telemetry.                                                                                                                                          |
+| anti-AD-EDNS       | Blocks encrypted DNS used for loading ads.                                                                                                                               |
+| AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
+| category-games@cn  | Allows games that support china access to use direct connections to save bandwidth.                                                                                      |
 
 ---
 
@@ -67,6 +71,7 @@ Below is a table of the main functions included in the Mihomo override package:
 (Available rule sets are in the [Release](https://github.com/Ckrvxr/MihomoRules/tree/release) branch)
 
 ### 🛠️ Integration Example
+
 ```yaml
 # config.yaml configuration snippet
 rule-providers:
@@ -74,7 +79,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    interval: 43200  # Updates every 12 hours
+    interval: 43200 # Updates every 12 hours
     url: "https://cdn.jsdelivr.net/gh/Ckrvxr/MihomoRules@RELEASE/anti-AD.mrs"
 
   stevenblack:
