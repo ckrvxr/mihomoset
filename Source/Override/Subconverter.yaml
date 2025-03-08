@@ -41,6 +41,8 @@ custom:
       group: "AD & Privacy"
     - rule: "RULE-SET,fuck-you-miui-mihosts"
       group: "AD & Privacy"
+    - rule: "RULE-SET,awavenue"
+      group: "AD & Privacy"
     - rule: "RULE-SET,adrules"
       group: "AD & Privacy"
     # - rule: "RULE-SET,stevenblack"
