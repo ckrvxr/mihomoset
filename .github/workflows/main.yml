@@ -37,21 +37,6 @@ jobs:
           echo "Fail due to unsupported mihomo architecture"
           exit 1
         fi
-        
-    - name: Download text file for AdRules
-      run: curl -o AdRules.txt https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt
-      
-    - name: Convert text to Mihomo rules yaml for AdRules
-      run: python3 Source/Script/TextToYAML.py AdRules.txt AdRules.yaml  
-
-    - name: Compile to Mihomo rules binary for AdRules
-      run: mihomo convert-ruleset domain yaml AdRules.yaml AdRules.mrs
-    
-    # - name: Download yaml file for anti-AD
-    #   run: curl -o anti-AD.yaml https://anti-ad.net/clash.yaml
-
-    # - name: Compile to Mihomo rules binary for anti-AD
-    #   run: mihomo convert-ruleset domain yaml anti-AD.yaml anti-AD.mrs
     
     - name: Download domains file for anti-AD-EDNS
       run: curl -o anti-AD-EDNS.domains https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/refs/heads/master/discretion/dns.txt
@@ -68,8 +53,8 @@ jobs:
     - name: Convert hosts to Mihomo rules yaml for StevenBlack
       run: python3 Source/Script/HostsToYAML.py StevenBlack.hosts StevenBlack.yaml
 
-    - name: Compile to Mihomo rules binary for StevenBlack
-      run: mihomo convert-ruleset domain yaml StevenBlack.yaml StevenBlack.mrs
+    # - name: Compile to Mihomo rules binary for StevenBlack
+    #   run: mihomo convert-ruleset domain yaml StevenBlack.yaml StevenBlack.mrs
 
     - name: Download hosts file for Fuck-You-MIUI-Fhosts
       run: curl -o Fuck-You-MIUI-Fhosts.hosts https://raw.githubusercontent.com/LoopDns/Fuck-you-MIUI/refs/heads/main/Fhosts
@@ -77,17 +62,11 @@ jobs:
     - name: Convert hosts to Mihomo rules yaml for Fuck-You-MIUI-Fhosts
       run: python3 Source/Script/HostsToYAML.py Fuck-You-MIUI-Fhosts.hosts Fuck-You-MIUI-Fhosts.yaml
     
-    - name: Compile to Mihomo rules binary for Fuck-You-MIUI-Fhosts
-      run: mihomo convert-ruleset domain yaml Fuck-You-MIUI-Fhosts.yaml Fuck-You-MIUI-Fhosts.mrs
-    
     - name: Download hosts file for Fuck-You-MIUI-MIhosts
       run: curl -o Fuck-You-MIUI-MIhosts.hosts https://raw.githubusercontent.com/LoopDns/Fuck-you-MIUI/refs/heads/main/MIhosts
 
     - name: Convert hosts to Mihomo rules yaml for Fuck-You-MIUI-MIhosts
-      run: python3 Source/Script/HostsToYAML.py Fuck-You-MIUI-MIhosts.hosts Fuck-You-MIUI-MIhosts.yaml     
-
-    - name: Compile to Mihomo rules binary for Fuck-You-MIUI-MIhosts
-      run: mihomo convert-ruleset domain yaml Fuck-You-MIUI-MIhosts.yaml Fuck-You-MIUI-MIhosts.mrs
+      run: python3 Source/Script/HostsToYAML.py Fuck-You-MIUI-MIhosts.hosts Fuck-You-MIUI-MIhosts.yaml
     
     - name: Push to releases branch
       run: |
