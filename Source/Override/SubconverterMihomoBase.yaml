@@ -145,6 +145,12 @@ rule-providers:
   #   format: mrs
   #   interval: 43200
   #   url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+  awavenue:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-classical.yaml"
   adrules:
     type: http
     behavior: domain
