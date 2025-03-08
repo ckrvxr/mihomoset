@@ -150,12 +150,12 @@ rule-providers:
     format: mrs
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/AdRules.mrs"
-  anti-ad:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
+  # anti-ad:
+  #   type: http
+  #   behavior: domain
+  #   format: mrs
+  #   interval: 43200
+  #   url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
   anti-ad-edns:
     type: http
     behavior: classical
@@ -245,7 +245,7 @@ rules:
   - "RULE-SET,fuck-you-miui-mihosts,AD & Privacy"
   - "RULE-SET,stevenblack,AD & Privacy"
   - "RULE-SET,adrules,AD & Privacy"
-  - "RULE-SET,anti-ad,AD & Privacy"
+  # - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,anti-ad-edns,EDNS"
   - "RULE-SET,antipcdn,PCDN"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
