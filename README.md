@@ -28,7 +28,6 @@ Below is a table of the main functions included in the MihomoParty override pack
 | applicationdesktop | Prevents proxy tools and P2P download software from using the proxy.                                                                                                     |
 | StevenBlack        | Blocks global ads, telemetry, and malicious websites.                                                                                                                    |
 | AdRules            | Blocks China ads and telemetry.                                                                                                                                          |
-| anti-AD            | Blocks China ads and telemetry.                                                                                                                                          |
 | anti-AD-EDNS       | Blocks encrypted DNS used for loading ads.                                                                                                                               |
 | AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
 | category-games@cn  | Allows games that support china access to use direct connections to save bandwidth.                                                                                      |
@@ -57,7 +56,6 @@ Below is a table of the main functions included in the Mihomo override package:
 | Fuck-You-MIUI      | Strongly blocks MIUI telemetry.                                                                                                                                          |
 | applicationdesktop | Prevents proxy tools and P2P download software from using the proxy.                                                                                                     |
 | AdRules            | Blocks China ads and telemetry.                                                                                                                                          |
-| anti-AD            | Blocks China ads and telemetry.                                                                                                                                          |
 | anti-AD-EDNS       | Blocks encrypted DNS used for loading ads.                                                                                                                               |
 | AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
 | category-games@cn  | Allows games that support china access to use direct connections to save bandwidth.                                                                                      |
@@ -75,13 +73,6 @@ Below is a table of the main functions included in the Mihomo override package:
 ```yaml
 # config.yaml configuration snippet
 rule-providers:
-  anti-ad:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200 # Updates every 12 hours
-    url: "https://cdn.jsdelivr.net/gh/Ckrvxr/MihomoRules@RELEASE/anti-AD.mrs"
-
   stevenblack:
     type: http
     behavior: domain
@@ -90,8 +81,9 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/Ckrvxr/MihomoRules@RELEASE/StevenBlack.mrs"
 
 rules:
-  - RULE-SET,anti-ad,REJECT
+  -...
   - RULE-SET,stevenblack,REJECT
+  -...
 ```
 
 ---
@@ -103,7 +95,6 @@ rules:
 # Special Thanks to the Following Projects
 
 - https://github.com/MetaCubeX/mihomo
-- https://github.com/privacy-protection-tools/anti-AD
 - https://github.com/StevenBlack/hosts
 - https://github.com/tindy2013/subconverter
 - https://github.com/zsokami/ACL4SSR
