@@ -43,8 +43,6 @@ custom:
       group: "AD & Privacy"
     - rule: "RULE-SET,adrules"
       group: "AD & Privacy"
-    # - rule: "RULE-SET,anti-ad"
-    #   group: "AD & Privacy"
     # - rule: "RULE-SET,stevenblack"
     #   group: "AD & Privacy"
     - rule: "RULE-SET,anti-ad-edns"
