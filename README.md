@@ -26,8 +26,7 @@ Below is a table of the main functions included in the MihomoParty override pack
 | AntiAntiFraud      | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project.        |
 | Fuck-You-MIUI      | Strongly blocks MIUI telemetry.                                                                                                                                          |
 | applicationdesktop | Prevents proxy tools and P2P download software from using the proxy.                                                                                                     |
-| StevenBlack        | Blocks global ads, telemetry, and malicious websites.                                                                                                                    |
-| AdRules            | Blocks China ads and telemetry.                                                                                                                                          |
+| AdRules            | Blocks ads and telemetry.                                                                                                                                          |
 | anti-AD-EDNS       | Blocks encrypted DNS used for loading ads.                                                                                                                               |
 | AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
 | category-games@cn  | Allows games that support china access to use direct connections to save bandwidth.                                                                                      |
@@ -55,7 +54,7 @@ Below is a table of the main functions included in the Mihomo override package:
 | AntiAntiFraud      | Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists. This is a set of rules collected and organized by this project.        |
 | Fuck-You-MIUI      | Strongly blocks MIUI telemetry.                                                                                                                                          |
 | applicationdesktop | Prevents proxy tools and P2P download software from using the proxy.                                                                                                     |
-| AdRules            | Blocks China ads and telemetry.                                                                                                                                          |
+| AdRules            | Blocks ads and telemetry.                                                                                                                                          |
 | anti-AD-EDNS       | Blocks encrypted DNS used for loading ads.                                                                                                                               |
 | AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
 | category-games@cn  | Allows games that support china access to use direct connections to save bandwidth.                                                                                      |
@@ -71,14 +70,13 @@ Below is a table of the main functions included in the Mihomo override package:
 ### 🛠️ Integration Example
 
 ```yaml
-# config.yaml configuration snippet
 rule-providers:
   stevenblack:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     interval: 43200
-    url: "https://cdn.jsdelivr.net/gh/Ckrvxr/MihomoRules@RELEASE/StevenBlack.mrs"
+    url: "https://cdn.jsdelivr.net/gh/Ckrvxr/MihomoRules@RELEASE/StevenBlack.yaml"
 
 rules:
   -...
