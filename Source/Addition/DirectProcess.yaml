@@ -84,6 +84,20 @@ payload:
   - PROCESS-NAME,xdm.exe
   - PROCESS-NAME,xdman
   - PROCESS-NAME,xdman.exe
+  - PROCESS-NAME,com.xunlei.downloadprovider
+  - PROCESS-NAME,com.utorrent.client
+  - PROCESS-NAME,com.utorrent.client.pro
+  - PROCESS-NAME,com.bittorrent.client
+  - PROCESS-NAME,com.bittorrent.client.pro
+  - PROCESS-NAME,com.delphicoder.flud
+  - PROCESS-NAME,com.delphicoder.flud.plus
+  - PROCESS-NAME,org.proninyaroslav.libretorrent
+  - PROCESS-NAME,intelligems.torrdroid
+  - PROCESS-NAME,com.mediaget.android
+  - PROCESS-NAME,org.freedownloadmanager.fdm
+  - PROCESS-NAME,com.dv.adm
+  - PROCESS-NAME,idm.internet.download
+  - PROCESS-NAME,idm.internet.download.manager.plus
   # VPN
   - PROCESS-NAME,tailscale
   - PROCESS-NAME,tailscale.exe
