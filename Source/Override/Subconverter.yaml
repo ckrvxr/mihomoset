@@ -45,8 +45,8 @@ custom:
       group: "AD & Privacy"
     - rule: "RULE-SET,AdRules"
       group: "AD & Privacy"
-    - rule: "RULE-SET,AntiEDNS"
-      group: "EDNS"
+    - rule: "RULE-SET,AntiDNS"
+      group: "DNS"
     - rule: "RULE-SET,AntiPCDN"
       group: "PCDN"
     # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
