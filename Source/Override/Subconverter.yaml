@@ -13,7 +13,7 @@ custom:
     - name: "AD & Privacy"
       type: select
       rule: ["[]REJECT", "[]PASS"]
-    - name: "EDNS"
+    - name: "DNS"
       type: select
       rule: ["[]REJECT", "[]PASS"]
     - name: "PCDN"
