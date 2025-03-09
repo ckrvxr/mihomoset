@@ -103,3 +103,5 @@ payload:
   - PROCESS-NAME,tailscale.exe
   - PROCESS-NAME,tailscaled
   - PROCESS-NAME,tailscaled.exe
+  - PROCESS-NAME,zerotier-one
+  - PROCESS-NAME,zerotier-one.exe
