@@ -84,7 +84,7 @@ payload:
   - PROCESS-NAME,xdm.exe
   - PROCESS-NAME,xdman
   - PROCESS-NAME,xdman.exe
-  # 
+  # VPN
   - PROCESS-NAME,tailscale
   - PROCESS-NAME,tailscale.exe
   - PROCESS-NAME,tailscaled
