@@ -327,14 +327,6 @@ payload:
   - DOMAIN-SUFFIX,httpdns.alicdn.com
   # 京东 20250309
   - DOMAIN-SUFFIX,dns.jd.com
-  - IP-CIDR,106.39.169.186/32,no-resolve
-  - IP-CIDR,111.13.29.186/32,no-resolve
-  - IP-CIDR,120.52.148.57/32,no-resolve
-  - IP-CIDR,211.144.24.152/32,no-resolve
-  - IP-CIDR,111.13.149.247/32,no-resolve
-  - IP-CIDR,240e:83:204::5/128,no-resolve
-  - IP-CIDR,2409:8c00:2461::5/128,no-resolve
-  - IP-CIDR,2408:8706:0:6800::5/128,no-resolve
   - DOMAIN-SUFFIX,dns.jd.com.gslb.qianxun.com
   - IP-CIDR,106.39.169.186/32,no-resolve
   - IP-CIDR,111.13.29.186/32,no-resolve
