@@ -239,7 +239,7 @@ rules:
   - "RULE-SET,Fuck-You-MIUI-MIhosts,AD & Privacy"
   - "RULE-SET,AWAvenue,AD & Privacy"
   - "RULE-SET,AdRules,AD & Privacy"
-  - "RULE-SET,AntiEDNS,EDNS"
+  - "RULE-SET,AntiDNS,DNS"
   - "RULE-SET,AntiPCDN,PCDN"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
   # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
