@@ -33,23 +33,21 @@ custom:
       rule: ["[]SELECT", "[]DIRECT", "[]REJECT"]
       
   rulesets:
-    - rule: "RULE-SET,applicationdesktop"
+    - rule: "RULE-SET,DirectProcess"
       group: DIRECT
-    - rule: "RULE-SET,antiantifraud"
+    - rule: "RULE-SET,AntiAntiFraud"
       group: REJECT
-    - rule: "RULE-SET,fuck-you-miui-fhosts"
+    - rule: "RULE-SET,Fuck-You-MIUI-Fhosts"
       group: "AD & Privacy"
-    - rule: "RULE-SET,fuck-you-miui-mihosts"
+    - rule: "RULE-SET,Fuck-You-MIUI-MIhosts"
       group: "AD & Privacy"
-    - rule: "RULE-SET,awavenue"
+    - rule: "RULE-SET,AWAvenue"
       group: "AD & Privacy"
-    - rule: "RULE-SET,adrules"
+    - rule: "RULE-SET,AdRules"
       group: "AD & Privacy"
-    # - rule: "RULE-SET,stevenblack"
-    #   group: "AD & Privacy"
-    - rule: "RULE-SET,anti-ad-edns"
+    - rule: "RULE-SET,AntiEDNS"
       group: "EDNS"
-    - rule: "RULE-SET,antipcdn"
+    - rule: "RULE-SET,AntiPCDN"
       group: "PCDN"
     # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
     # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
