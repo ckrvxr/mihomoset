@@ -128,34 +128,28 @@ rule-providers:
     url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiAntiFraud.yaml"
   fuck-you-miui-fhosts:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.mrs"
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-Fhosts.yaml"
   fuck-you-miui-mihosts:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.mrs" 
-  stevenblack:
+    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/Fuck-You-MIUI-MIhosts.yaml"
+  awavenue:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/StevenBlack.mrs"
+    url: "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-classical.yaml"
   adrules:
     type: http
     behavior: domain
-    format: mrs
+    format: text
     interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@release/AdRules.mrs"
-  # anti-ad:
-  #   type: http
-  #   behavior: domain
-  #   format: mrs
-  #   interval: 43200
-  #   url: "https://fastly.jsdelivr.net/gh/privacy-protection-tools/anti-ad.github.io@master/docs/mihomo.mrs"
+    url: "https://fastly.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules_domainset.txt"
   anti-ad-edns:
     type: http
     behavior: classical
@@ -240,12 +234,11 @@ proxy-groups:
 
 rules:
   - "RULE-SET,applicationdesktop,DIRECT"
-  - "RULE-SET,antiantifraud,AD & Privacy"
+  - "RULE-SET,antiantifraud,REJECT"  
   - "RULE-SET,fuck-you-miui-fhosts,AD & Privacy"
   - "RULE-SET,fuck-you-miui-mihosts,AD & Privacy"
-  - "RULE-SET,stevenblack,AD & Privacy"
+  - "RULE-SET,awavenue,AD & Privacy"
   - "RULE-SET,adrules,AD & Privacy"
-  # - "RULE-SET,anti-ad,AD & Privacy"
   - "RULE-SET,anti-ad-edns,EDNS"
   - "RULE-SET,antipcdn,PCDN"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
