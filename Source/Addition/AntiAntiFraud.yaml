@@ -9,3 +9,4 @@ payload:
   - PROCESS-NAME,com.qihoo.cleandroid_lite
   - PROCESS-NAME,com.cleanmaster.mguard_cn
   - PROCESS-NAME,cn.xuexi.android
+  - DOMAIN-SUFFIX,gjfzpt.cn
