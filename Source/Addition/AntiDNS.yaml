@@ -565,6 +565,9 @@ payload:
   - IP-CIDR,106.14.23.11/32,no-resolve
   - IP-CIDR,47.106.91.205/32,no-resolve
   - IP-CIDR,139.224.30.139/32,no-resolve
+  # 优刻得 20250309
+  - DOMAIN-SUFFIX,httpdns.ucloud.cn
+  - IP-CIDR,106.75.102.1/32,no-resolve
   # 百度 20250309
   - DOMAIN-SUFFIX,httpsdns.baidu.com
   - IP-CIDR,220.181.33.107/32,no-resolve
