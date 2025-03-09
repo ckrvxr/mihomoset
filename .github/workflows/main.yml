@@ -13,30 +13,29 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Install Mihomo
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        case "$(uname -m)" in
-          'x86_64')             ARCH='amd64'  ;;
-          'x86'|'i686'|'i386')  ARCH='386'    ;;
-          'aarch64'|'arm64')    ARCH='arm64'  ;;
-          'armv7l')             ARCH='armv7'  ;;
-          'riscv64')            ARCH='riscv64';;
-          's390x')              ARCH='s390x'  ;;
-          *)                    ARCH='unknown';;
-        esac
-        echo "Detected architecture: $ARCH"
-    
-        if [ "$ARCH" != 'unknown' ]; then
-          MIHOMO_VER=$(wget -qO- 'https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt')
-          MIHOMO_URL="https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-${ARCH}-${MIHOMO_VER}.deb"
-          wget -qO mihomo.deb "$MIHOMO_URL"
-          sudo apt-get install ./mihomo.deb
-        else
-          echo "Fail due to unsupported mihomo architecture"
-          exit 1
-        fi
+    # - name: Install Mihomo
+    #   env:
+    #     DEBIAN_FRONTEND: noninteractive
+    #   run: |
+    #     case "$(uname -m)" in
+    #       'x86_64')             ARCH='amd64'  ;;
+    #       'x86'|'i686'|'i386')  ARCH='386'    ;;
+    #       'aarch64'|'arm64')    ARCH='arm64'  ;;
+    #       'armv7l')             ARCH='armv7'  ;;
+    #       'riscv64')            ARCH='riscv64';;
+    #       's390x')              ARCH='s390x'  ;;
+    #       *)                    ARCH='unknown';;
+    #     esac
+    #     echo "Detected architecture: $ARCH"
+    #     if [ "$ARCH" != 'unknown' ]; then
+    #       MIHOMO_VER=$(wget -qO- 'https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt')
+    #       MIHOMO_URL="https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-${ARCH}-${MIHOMO_VER}.deb"
+    #       wget -qO mihomo.deb "$MIHOMO_URL"
+    #       sudo apt-get install ./mihomo.deb
+    #     else
+    #       echo "Fail due to unsupported mihomo architecture"
+    #       exit 1
+    #     fi
     
     - name: Download domains file for anti-AD-EDNS
       run: curl -o anti-AD-EDNS.domains https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/refs/heads/master/discretion/dns.txt
@@ -77,6 +76,6 @@ jobs:
         git checkout -b release
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
-        git add *.yaml *.mrs
+        git add *.yaml
         git commit -m "Update rules ($current_date)"
         git push origin release -f
