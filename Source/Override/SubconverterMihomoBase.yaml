@@ -150,12 +150,6 @@ rule-providers:
     format: text
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules_domainset.txt"
-  AntiDNS:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiDNS.yaml"
   AntiPCDN:
     type: http
     behavior: classical
