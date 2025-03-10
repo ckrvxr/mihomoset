@@ -171,13 +171,6 @@ proxy-groups:
       - "REJECT"
       - "PASS"
     url: "http://www.gstatic.com/generate_204"
-  - name: "DNS"
-    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Lock.png"
-    type: select
-    proxies:
-      - "REJECT"
-      - "PASS"
-    url: "http://www.gstatic.com/generate_204"
   - name: "PCDN"
     icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Server.png"
     type: select
