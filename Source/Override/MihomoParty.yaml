@@ -150,12 +150,6 @@ rule-providers:
     format: text
     interval: 43200
     url: "https://fastly.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules_domainset.txt"
-  AntiDNS:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 43200
-    url: "https://fastly.jsdelivr.net/gh/Ckrvxr/MihomoRules@main/Source/Addition/AntiDNS.yaml"
   AntiPCDN:
     type: http
     behavior: classical
@@ -239,7 +233,6 @@ rules:
   - "RULE-SET,Fuck-You-MIUI-MIhosts,AD & Privacy"
   - "RULE-SET,AWAvenue,AD & Privacy"
   - "RULE-SET,AdRules,AD & Privacy"
-  - "RULE-SET,AntiDNS,DNS"
   - "RULE-SET,AntiPCDN,PCDN"
   # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
   # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
