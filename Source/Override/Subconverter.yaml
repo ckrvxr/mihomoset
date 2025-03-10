@@ -13,9 +13,6 @@ custom:
     - name: "AD & Privacy"
       type: select
       rule: ["[]REJECT", "[]PASS"]
-    - name: "DNS"
-      type: select
-      rule: ["[]REJECT", "[]PASS"]
     - name: "PCDN"
       type: select
       rule: ["[]REJECT", "[]PASS"]
