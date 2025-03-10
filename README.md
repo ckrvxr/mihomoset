@@ -13,7 +13,7 @@ Below is a table of the main functions included in the Mihomo override package:
 | Fuck-You-MIUI      | Strongly blocks MIUI telemetry.                                                                                                                                          |
 | AdRules            | Blocks ads and telemetry.                                                                                                                                                |
 | AWAvenue           | Blocks ads and telemetry.                                                                                                                                                |
-| AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected and organized by this project, which is not yet perfect. We hope everyone can contribute. |
+| AntiPCDN           | Blocks P2P2 CDN to speed up streaming access. This is a set of rules collected by this project, which is not yet perfect. We hope everyone can contribute.               |
 | category-games@cn  | Allows games that support china access to use direct connections to save bandwidth.                                                                                      |
 
 ### Option One: MihomoParty Direct Installation
